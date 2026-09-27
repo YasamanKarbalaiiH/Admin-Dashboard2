@@ -27,9 +27,3 @@ A modern and responsive admin dashboard built with Next.js, React, TypeScript, a
 - Zod
 - Lucide React
 
-## Getting Started
-
-Install the dependencies:
-
-```bash
-npm install
