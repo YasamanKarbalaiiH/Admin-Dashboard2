@@ -1,7 +1,12 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Eye, Pencil, Plus, Search, Trash2, X } from "lucide-react";
+import Modal from "../Modal";
+import TableActions from "../TableActions";
+import ProductForm from "./ProductForm";
+import Table from "../Table";
+import InfoField from "../InfoField";
+import { Plus, Search, X } from "lucide-react";
 
 import type {
   Product,
@@ -32,7 +37,14 @@ function getStatusClass(status: ProductStatus) {
 
   return "bg-danger-light text-danger";
 }
-
+const productColumns = [
+  { label: "Product" },
+  { label: "Category" },
+  { label: "Price" },
+  { label: "Stock" },
+  { label: "Status" },
+  { label: "Actions", align: "right" as const },
+];
 export default function ProductsClient({
   initialProducts,
 }: ProductsClientProps) {
@@ -345,108 +357,85 @@ export default function ProductsClient({
           </div>
         ) : (
           <>
-            <div className="hidden overflow-x-auto md:block">
-              <table className="w-full min-w-212.5">
-                <thead>
-                  <tr className="border-b border-border bg-background text-left">
-                    <th className="px-5 py-4 text-xs font-semibold uppercase tracking-wide text-text-muted">
-                      Product
-                    </th>
+            <Table
+              data={filteredProducts}
+              columns={productColumns}
+              getRowKey={(product) => product.id}
+              renderDesktopCells={(product) => (
+                <>
+                  <td className="px-5 py-4">
+                    <ProductName product={product} />
+                  </td>
 
-                    <th className="px-5 py-4 text-xs font-semibold uppercase tracking-wide text-text-muted">
-                      Category
-                    </th>
+                  <td className="px-5 py-4 text-sm text-text-secondary">
+                    {product.category}
+                  </td>
 
-                    <th className="px-5 py-4 text-xs font-semibold uppercase tracking-wide text-text-muted">
-                      Price
-                    </th>
+                  <td className="px-5 py-4 text-sm text-text-secondary">
+                    ${product.price.toLocaleString()}
+                  </td>
 
-                    <th className="px-5 py-4 text-xs font-semibold uppercase tracking-wide text-text-muted">
-                      Stock
-                    </th>
+                  <td className="px-5 py-4 text-sm text-text-secondary">
+                    {product.stock}
+                  </td>
 
-                    <th className="px-5 py-4 text-xs font-semibold uppercase tracking-wide text-text-muted">
-                      Status
-                    </th>
+                  <td className="px-5 py-4">
+                    <StatusBadge status={product.status} />
+                  </td>
 
-                    <th className="px-5 py-4 text-right text-xs font-semibold uppercase tracking-wide text-text-muted">
-                      Actions
-                    </th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  {filteredProducts.map((product) => (
-                    <tr
-                      key={product.id}
-                      className="border-b border-border last:border-0 hover:bg-background/60"
-                    >
-                      <td className="px-5 py-4">
-                        <ProductName product={product} />
-                      </td>
-
-                      <td className="px-5 py-4 text-sm text-text-secondary">
-                        {product.category}
-                      </td>
-
-                      <td className="px-5 py-4 text-sm font-medium text-text-primary">
-                        ${product.price.toLocaleString()}
-                      </td>
-
-                      <td className="px-5 py-4 text-sm text-text-secondary">
-                        {product.stock}
-                      </td>
-
-                      <td className="px-5 py-4">
-                        <StatusBadge status={product.status} />
-                      </td>
-
-                      <td className="px-5 py-4">
-                        <Actions
-                          product={product}
-                          onView={openViewModal}
-                          onEdit={openEditModal}
-                          onDelete={handleDelete}
-                        />
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            <div className="divide-y divide-border md:hidden">
-              {filteredProducts.map((product) => (
-                <div key={product.id} className="space-y-4 p-4">
+                  <td className="px-5 py-4">
+                    <TableActions
+                      item={product}
+                      onView={openViewModal}
+                      onEdit={openEditModal}
+                      onDelete={handleDelete}
+                    />
+                  </td>
+                </>
+              )}
+              renderMobileContent={(product) => (
+                <>
                   <div className="flex items-start justify-between gap-3">
                     <ProductName product={product} />
-
                     <StatusBadge status={product.status} />
                   </div>
 
                   <div className="grid grid-cols-2 gap-3">
-                    <MobileInfo label="Category" value={product.category} />
-
-                    <MobileInfo label="Stock" value={String(product.stock)} />
-
-                    <MobileInfo
-                      label="Price"
-                      value={`$${product.price.toLocaleString()}`}
+                    <InfoField
+                      label="Category"
+                      value={product.category}
+                      variant="mobile"
                     />
 
-                    <MobileInfo label="Product ID" value={`#${product.id}`} />
+                    <InfoField
+                      label="Stock"
+                      value={String(product.stock)}
+                      variant="mobile"
+                    />
+
+                    <InfoField
+                      label="Price"
+                      value={`$${product.price.toLocaleString()}`}
+                      variant="mobile"
+                    />
+
+                    <InfoField
+                      label="Product ID"
+                      value={`#${product.id}`}
+                      variant="mobile"
+                    />
                   </div>
 
-                  <Actions
-                    product={product}
+                  <TableActions
+                    item={product}
                     onView={openViewModal}
                     onEdit={openEditModal}
                     onDelete={handleDelete}
                     mobile
                   />
-                </div>
-              ))}
-            </div>
+                </>
+              )}
+            />
           </>
         )}
 
@@ -457,158 +446,59 @@ export default function ProductsClient({
         )}
       </div>
 
-      {modal && (
-        <div
-          className="fixed inset-0 z-60 flex items-end justify-center bg-black/40 p-0 sm:items-center sm:p-4"
-          onMouseDown={(event) => {
-            if (event.target === event.currentTarget) {
-              closeModal();
-            }
-          }}
-        >
-          <div className="max-h-[94vh] w-full overflow-y-auto rounded-t-3xl bg-surface shadow-2xl sm:max-w-lg sm:rounded-2xl">
-            <div className="flex items-center justify-between border-b border-border px-5 py-4">
-              <div className="min-w-0">
-                <h2 className="font-semibold text-text-primary">
-                  {modal === "add"
-                    ? "Add Product"
-                    : modal === "edit"
-                      ? "Edit Product"
-                      : "Product Details"}
-                </h2>
-
-                {modal !== "view" && (
-                  <p className="mt-1 text-xs text-text-muted">
-                    Fill in the product information.
-                  </p>
-                )}
+      <Modal
+        isOpen={modal !== null}
+        onClose={closeModal}
+        title={
+          modal === "add"
+            ? "Add Product"
+            : modal === "edit"
+              ? "Edit Product"
+              : "Product Details"
+        }
+      >
+        {modal === "view" && selectedProduct && (
+          <div className="space-y-5 p-5">
+            <div className="flex items-center gap-4">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-primary-light text-lg font-bold text-primary">
+                {selectedProduct.name.charAt(0)}
               </div>
 
-              <button
-                onClick={closeModal}
-                className="ml-3 shrink-0 rounded-lg p-2 text-text-secondary hover:bg-background"
-                aria-label="Close modal"
-              >
-                <X size={19} />
-              </button>
+              <div className="min-w-0">
+                <h3 className="truncate font-semibold text-text-primary">
+                  {selectedProduct.name}
+                </h3>
+
+                <div className="mt-1">
+                  <StatusBadge status={selectedProduct.status} />
+                </div>
+              </div>
             </div>
 
-            {modal === "view" && selectedProduct && (
-              <div className="space-y-5 p-5">
-                <div className="flex items-center gap-4">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-primary-light text-lg font-bold text-primary">
-                    {selectedProduct.name.charAt(0)}
-                  </div>
-
-                  <div className="min-w-0">
-                    <h3 className="truncate font-semibold text-text-primary">
-                      {selectedProduct.name}
-                    </h3>
-
-                    <div className="mt-1">
-                      <StatusBadge status={selectedProduct.status} />
-                    </div>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
-                  <Info label="Category" value={selectedProduct.category} />
-
-                  <Info
-                    label="Price"
-                    value={`$${selectedProduct.price.toLocaleString()}`}
-                  />
-
-                  <Info label="Stock" value={String(selectedProduct.stock)} />
-
-                  <Info label="Status" value={selectedProduct.status} />
-                </div>
-              </div>
-            )}
-
-            {modal !== "view" && (
-              <form onSubmit={handleSubmit} className="space-y-4 p-5">
-                <Field
-                  label="Product Name"
-                  value={form.name}
-                  onChange={(value) => handleTextChange("name", value)}
-                  required
-                />
-
-                <Field
-                  label="Category"
-                  value={form.category}
-                  onChange={(value) => handleTextChange("category", value)}
-                  required
-                />
-
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  <NumberField
-                    label="Price"
-                    value={form.price}
-                    min={0}
-                    step="0.01"
-                    onChange={(value) => handleNumberChange("price", value)}
-                    required
-                  />
-
-                  <NumberField
-                    label="Stock"
-                    value={form.stock}
-                    min={0}
-                    step="1"
-                    onChange={(value) => handleNumberChange("stock", value)}
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label className="mb-1.5 block text-sm font-medium text-text-primary">
-                    Status
-                  </label>
-
-                  <select
-                    value={form.status}
-                    onChange={(event) =>
-                      handleStatusChange(event.target.value as ProductStatus)
-                    }
-                    className="h-11 w-full rounded-xl border border-border bg-background px-3 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/10"
-                  >
-                    <option value="In Stock">In Stock</option>
-
-                    <option value="Low Stock">Low Stock</option>
-
-                    <option value="Out of Stock">Out of Stock</option>
-                  </select>
-                </div>
-
-                <div className="flex flex-col-reverse gap-3 border-t border-border pt-4 sm:flex-row sm:justify-end sm:border-0 sm:pt-3">
-                  <button
-                    type="button"
-                    onClick={closeModal}
-                    disabled={saving}
-                    className="min-h-11 rounded-xl border border-border px-5 py-2.5 text-sm font-medium text-text-secondary transition hover:bg-background disabled:opacity-50"
-                  >
-                    Cancel
-                  </button>
-
-                  <button
-                    type="submit"
-                    disabled={saving}
-                    className="min-h-11 rounded-xl bg-primary px-5 py-2.5 text-sm font-medium text-white transition hover:bg-primary-dark disabled:cursor-not-allowed disabled:opacity-60"
-                  >
-                    {saving
-                      ? "Saving..."
-                      : modal === "edit"
-                        ? "Save Changes"
-                        : "Add Product"}
-                  </button>
-                </div>
-              </form>
-            )}
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
+              <InfoField label="Category" value={selectedProduct.category} />
+              <InfoField
+                label="Price"
+                value={`$${selectedProduct.price.toLocaleString()}`}
+              />
+              <InfoField label="Stock" value={String(selectedProduct.stock)} />
+            </div>
           </div>
-        </div>
-      )}
+        )}
+
+        {modal !== "view" && (
+          <ProductForm
+            form={form}
+            saving={saving}
+            mode={modal === "edit" ? "edit" : "add"}
+            onTextChange={handleTextChange}
+            onNumberChange={handleNumberChange}
+            onStatusChange={handleStatusChange}
+            onSubmit={handleSubmit}
+            onClose={closeModal}
+          />
+        )}
+      </Modal>
     </div>
   );
 }
@@ -636,163 +526,5 @@ function StatusBadge({ status }: { status: ProductStatus }) {
     >
       {status}
     </span>
-  );
-}
-
-function Actions({
-  product,
-  onView,
-  onEdit,
-  onDelete,
-  mobile = false,
-}: {
-  product: Product;
-  onView: (product: Product) => void;
-  onEdit: (product: Product) => void;
-  onDelete: (product: Product) => void;
-  mobile?: boolean;
-}) {
-  if (mobile) {
-    return (
-      <div className="grid grid-cols-3 gap-2">
-        <button
-          onClick={() => onView(product)}
-          className="flex min-h-10 items-center justify-center gap-2 rounded-xl border border-border text-sm font-medium text-text-secondary transition hover:bg-primary-light hover:text-primary"
-        >
-          <Eye size={16} />
-          View
-        </button>
-
-        <button
-          onClick={() => onEdit(product)}
-          className="flex min-h-10 items-center justify-center gap-2 rounded-xl border border-border text-sm font-medium text-text-secondary transition hover:bg-primary-light hover:text-primary"
-        >
-          <Pencil size={16} />
-          Edit
-        </button>
-
-        <button
-          onClick={() => onDelete(product)}
-          className="flex min-h-10 items-center justify-center gap-2 rounded-xl border border-border text-sm font-medium text-text-secondary transition hover:bg-danger-light hover:text-danger"
-        >
-          <Trash2 size={16} />
-          Delete
-        </button>
-      </div>
-    );
-  }
-
-  return (
-    <div className="flex justify-end gap-1">
-      <button
-        onClick={() => onView(product)}
-        className="rounded-lg p-2 text-text-secondary transition hover:bg-primary-light hover:text-primary"
-        title="View"
-      >
-        <Eye size={17} />
-      </button>
-
-      <button
-        onClick={() => onEdit(product)}
-        className="rounded-lg p-2 text-text-secondary transition hover:bg-primary-light hover:text-primary"
-        title="Edit"
-      >
-        <Pencil size={17} />
-      </button>
-
-      <button
-        onClick={() => onDelete(product)}
-        className="rounded-lg p-2 text-text-secondary transition hover:bg-danger-light hover:text-danger"
-        title="Delete"
-      >
-        <Trash2 size={17} />
-      </button>
-    </div>
-  );
-}
-
-function MobileInfo({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="rounded-xl bg-background p-3">
-      <p className="text-[11px] text-text-muted">{label}</p>
-
-      <p className="mt-1 truncate text-sm font-medium text-text-primary">
-        {value}
-      </p>
-    </div>
-  );
-}
-
-function Field({
-  label,
-  value,
-  onChange,
-  required = false,
-}: {
-  label: string;
-  value: string;
-  onChange: (value: string) => void;
-  required?: boolean;
-}) {
-  return (
-    <div>
-      <label className="mb-1.5 block text-sm font-medium text-text-primary">
-        {label}
-      </label>
-
-      <input
-        type="text"
-        value={value}
-        required={required}
-        onChange={(event) => onChange(event.target.value)}
-        className="h-11 w-full rounded-xl border border-border bg-background px-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/10"
-      />
-    </div>
-  );
-}
-
-function NumberField({
-  label,
-  value,
-  onChange,
-  min,
-  step,
-  required = false,
-}: {
-  label: string;
-  value: number;
-  onChange: (value: string) => void;
-  min: number;
-  step: string;
-  required?: boolean;
-}) {
-  return (
-    <div>
-      <label className="mb-1.5 block text-sm font-medium text-text-primary">
-        {label}
-      </label>
-
-      <input
-        type="number"
-        value={value}
-        min={min}
-        step={step}
-        required={required}
-        onChange={(event) => onChange(event.target.value)}
-        className="h-11 w-full rounded-xl border border-border bg-background px-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/10"
-      />
-    </div>
-  );
-}
-
-function Info({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="rounded-xl bg-background p-4">
-      <p className="text-xs text-text-muted">{label}</p>
-
-      <p className="mt-1 wrap-break-word text-sm font-medium text-text-primary">
-        {value}
-      </p>
-    </div>
   );
 }
