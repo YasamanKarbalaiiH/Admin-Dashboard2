@@ -1,6 +1,6 @@
 "use client";
 
-import { Bell, Menu, Search } from "lucide-react";
+import { Bell, Menu, Rocket } from "lucide-react";
 
 type HeaderProps = {
   onMenuClick: () => void;
@@ -17,14 +17,9 @@ export default function Header({ onMenuClick }: HeaderProps) {
           <Menu size={22} />
         </button>
 
-        <div className="hidden h-10 w-72 items-center gap-2 rounded-xl bg-background px-3 md:flex">
-          <Search size={18} className="text-text-muted" />
-
-          <input
-            type="text"
-            placeholder="Search anything..."
-            className="w-full bg-transparent text-sm outline-none placeholder:text-text-muted"
-          />
+        <div className="font-extrabold text-2xl flex items-center">
+          <h1 className="mr-2">Welcome!</h1>
+          <Rocket size={22} className="text-primary-dark fill-primary-dark" />
         </div>
       </div>
 
