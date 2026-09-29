@@ -7,6 +7,8 @@ import InfoField from "../InfoField";
 import InvoiceForm from "./InvoiceForm";
 import { Plus, Search, X } from "lucide-react";
 import Table from "../Table";
+import { useCrud } from "../../hooks/useCrud";
+
 import type {
   Invoice,
   InvoiceFormData,
@@ -49,10 +51,20 @@ const invoiceColumns = [
 export default function InvoicesClient({
   initialInvoices,
 }: InvoicesClientProps) {
-  const [invoices, setInvoices] = useState<Invoice[]>(initialInvoices);
-
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const {
+    items: invoices,
+    loading,
+    saving,
+    error,
+    setError,
+    create,
+    update,
+    remove,
+  } = useCrud<Invoice>({
+    endpoint: "/api/invoices",
+    initialData: initialInvoices,
+    getId: (invoice) => invoice.id,
+  });
 
   const [search, setSearch] = useState("");
   const [statusFilter, setStatusFilter] = useState("All");
@@ -62,8 +74,6 @@ export default function InvoicesClient({
   const [selectedInvoice, setSelectedInvoice] = useState<Invoice | null>(null);
 
   const [form, setForm] = useState<InvoiceFormData>(emptyForm);
-
-  const [saving, setSaving] = useState(false);
 
   const filteredInvoices = useMemo(() => {
     return invoices.filter((invoice) => {
@@ -79,29 +89,6 @@ export default function InvoicesClient({
       return matchesSearch && matchesStatus;
     });
   }, [invoices, search, statusFilter]);
-
-  async function refreshInvoices() {
-    try {
-      setLoading(true);
-      setError("");
-
-      const response = await fetch("/api/invoices", {
-        cache: "no-store",
-      });
-
-      if (!response.ok) {
-        throw new Error();
-      }
-
-      const data = (await response.json()) as Invoice[];
-
-      setInvoices(data);
-    } catch {
-      setError("Failed to refresh invoices. Please try again.");
-    } finally {
-      setLoading(false);
-    }
-  }
 
   function openAddModal() {
     setForm(emptyForm);
@@ -173,42 +160,20 @@ export default function InvoicesClient({
       return;
     }
 
-    try {
-      setSaving(true);
-      setError("");
+    const isEdit = modal === "edit" && selectedInvoice !== null;
 
-      const isEdit = modal === "edit" && selectedInvoice !== null;
+    const success = isEdit
+      ? await update(selectedInvoice.id, form)
+      : await create(form);
 
-      const url = isEdit
-        ? `/api/invoices/${selectedInvoice.id}`
-        : "/api/invoices";
-
-      const method = isEdit ? "PUT" : "POST";
-
-      const response = await fetch(url, {
-        method,
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(form),
-      });
-
-      if (!response.ok) {
-        throw new Error();
-      }
-
-      await refreshInvoices();
-
-      setModal(null);
-      setSelectedInvoice(null);
-      setForm(emptyForm);
-    } catch {
-      setError("Something went wrong. Please try again.");
-    } finally {
-      setSaving(false);
+    if (!success) {
+      return;
     }
-  }
 
+    setModal(null);
+    setSelectedInvoice(null);
+    setForm(emptyForm);
+  }
   async function handleDelete(invoice: Invoice) {
     const confirmed = window.confirm(`Delete ${invoice.invoiceNumber}?`);
 
@@ -216,23 +181,7 @@ export default function InvoicesClient({
       return;
     }
 
-    try {
-      setError("");
-
-      const response = await fetch(`/api/invoices/${invoice.id}`, {
-        method: "DELETE",
-      });
-
-      if (!response.ok) {
-        throw new Error();
-      }
-
-      setInvoices((current) =>
-        current.filter((item) => item.id !== invoice.id),
-      );
-    } catch {
-      setError("Failed to delete invoice. Please try again.");
-    }
+    await remove(invoice);
   }
 
   function clearFilters() {

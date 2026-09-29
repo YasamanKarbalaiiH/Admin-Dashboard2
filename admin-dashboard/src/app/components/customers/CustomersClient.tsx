@@ -6,6 +6,7 @@ import CustomerForm from "./CustomerForm";
 import Table from "../Table";
 import { Plus, Search, X } from "lucide-react";
 import InfoField from "../InfoField";
+import { useCrud } from "../../hooks/useCrud";
 
 import type { Customer, CustomerFormData } from "../../types/customer";
 
@@ -39,11 +40,20 @@ const customerColumns = [
 export default function CustomersClient({
   initialCustomers,
 }: CustomersClientProps) {
-  const [customers, setCustomers] = useState<Customer[]>(initialCustomers);
-
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-
+  const {
+    items: customers,
+    loading,
+    saving,
+    error,
+    setError,
+    create,
+    update,
+    remove,
+  } = useCrud<Customer>({
+    endpoint: "/api/customers",
+    initialData: initialCustomers,
+    getId: (customer) => customer.id,
+  });
   const [search, setSearch] = useState("");
   const [statusFilter, setStatusFilter] = useState("All");
 
@@ -54,8 +64,6 @@ export default function CustomersClient({
   );
 
   const [form, setForm] = useState<CustomerFormData>(emptyForm);
-
-  const [saving, setSaving] = useState(false);
 
   const filteredCustomers = useMemo(() => {
     return customers.filter((customer) => {
@@ -73,29 +81,6 @@ export default function CustomersClient({
       return matchesSearch && matchesStatus;
     });
   }, [customers, search, statusFilter]);
-
-  async function refreshCustomers() {
-    try {
-      setLoading(true);
-      setError("");
-
-      const response = await fetch("/api/customers", {
-        cache: "no-store",
-      });
-
-      if (!response.ok) {
-        throw new Error();
-      }
-
-      const data = (await response.json()) as Customer[];
-
-      setCustomers(data);
-    } catch {
-      setError("Failed to refresh customers. Please try again.");
-    } finally {
-      setLoading(false);
-    }
-  }
 
   function openAddModal() {
     setForm(emptyForm);
@@ -149,40 +134,19 @@ export default function CustomersClient({
       return;
     }
 
-    try {
-      setSaving(true);
-      setError("");
+    const isEdit = modal === "edit" && selectedCustomer !== null;
 
-      const isEdit = modal === "edit" && selectedCustomer !== null;
+    const success = isEdit
+      ? await update(selectedCustomer.id, form)
+      : await create(form);
 
-      const url = isEdit
-        ? `/api/customers/${selectedCustomer.id}`
-        : "/api/customers";
-
-      const method = isEdit ? "PUT" : "POST";
-
-      const response = await fetch(url, {
-        method,
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(form),
-      });
-
-      if (!response.ok) {
-        throw new Error();
-      }
-
-      await refreshCustomers();
-
-      setModal(null);
-      setSelectedCustomer(null);
-      setForm(emptyForm);
-    } catch {
-      setError("Something went wrong. Please try again.");
-    } finally {
-      setSaving(false);
+    if (!success) {
+      return;
     }
+
+    setModal(null);
+    setSelectedCustomer(null);
+    setForm(emptyForm);
   }
 
   async function handleDelete(customer: Customer) {
@@ -192,23 +156,7 @@ export default function CustomersClient({
       return;
     }
 
-    try {
-      setError("");
-
-      const response = await fetch(`/api/customers/${customer.id}`, {
-        method: "DELETE",
-      });
-
-      if (!response.ok) {
-        throw new Error();
-      }
-
-      setCustomers((current) =>
-        current.filter((item) => item.id !== customer.id),
-      );
-    } catch {
-      setError("Failed to delete customer. Please try again.");
-    }
+    await remove(customer);
   }
 
   function clearFilters() {

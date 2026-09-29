@@ -6,6 +6,7 @@ import TableActions from "../TableActions";
 import ProductForm from "./ProductForm";
 import Table from "../Table";
 import InfoField from "../InfoField";
+import { useCrud } from "../../hooks/useCrud";
 import { Plus, Search, X } from "lucide-react";
 
 import type {
@@ -48,10 +49,20 @@ const productColumns = [
 export default function ProductsClient({
   initialProducts,
 }: ProductsClientProps) {
-  const [products, setProducts] = useState<Product[]>(initialProducts);
-
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const {
+    items: products,
+    loading,
+    saving,
+    error,
+    setError,
+    create,
+    update,
+    remove,
+  } = useCrud<Product>({
+    endpoint: "/api/products",
+    initialData: initialProducts,
+    getId: (product) => product.id,
+  });
 
   const [search, setSearch] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("All");
@@ -62,8 +73,6 @@ export default function ProductsClient({
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   const [form, setForm] = useState<ProductFormData>(emptyForm);
-
-  const [saving, setSaving] = useState(false);
 
   const categories = useMemo(() => {
     return Array.from(new Set(products.map((product) => product.category)));
@@ -86,29 +95,6 @@ export default function ProductsClient({
       return matchesSearch && matchesCategory && matchesStatus;
     });
   }, [products, search, categoryFilter, statusFilter]);
-
-  async function refreshProducts() {
-    try {
-      setLoading(true);
-      setError("");
-
-      const response = await fetch("/api/products", {
-        cache: "no-store",
-      });
-
-      if (!response.ok) {
-        throw new Error();
-      }
-
-      const data = (await response.json()) as Product[];
-
-      setProducts(data);
-    } catch {
-      setError("Failed to refresh products. Please try again.");
-    } finally {
-      setLoading(false);
-    }
-  }
 
   function openAddModal() {
     setForm(emptyForm);
@@ -176,40 +162,19 @@ export default function ProductsClient({
       return;
     }
 
-    try {
-      setSaving(true);
-      setError("");
+    const isEdit = modal === "edit" && selectedProduct !== null;
 
-      const isEdit = modal === "edit" && selectedProduct !== null;
+    const success = isEdit
+      ? await update(selectedProduct.id, form)
+      : await create(form);
 
-      const url = isEdit
-        ? `/api/products/${selectedProduct.id}`
-        : "/api/products";
-
-      const method = isEdit ? "PUT" : "POST";
-
-      const response = await fetch(url, {
-        method,
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(form),
-      });
-
-      if (!response.ok) {
-        throw new Error();
-      }
-
-      await refreshProducts();
-
-      setModal(null);
-      setSelectedProduct(null);
-      setForm(emptyForm);
-    } catch {
-      setError("Something went wrong. Please try again.");
-    } finally {
-      setSaving(false);
+    if (!success) {
+      return;
     }
+
+    setModal(null);
+    setSelectedProduct(null);
+    setForm(emptyForm);
   }
 
   async function handleDelete(product: Product) {
@@ -219,23 +184,7 @@ export default function ProductsClient({
       return;
     }
 
-    try {
-      setError("");
-
-      const response = await fetch(`/api/products/${product.id}`, {
-        method: "DELETE",
-      });
-
-      if (!response.ok) {
-        throw new Error();
-      }
-
-      setProducts((current) =>
-        current.filter((item) => item.id !== product.id),
-      );
-    } catch {
-      setError("Failed to delete product. Please try again.");
-    }
+    await remove(product);
   }
 
   function clearFilters() {
