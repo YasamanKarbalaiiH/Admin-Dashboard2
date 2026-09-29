@@ -89,7 +89,17 @@ export default function InvoicesClient({
       return matchesSearch && matchesStatus;
     });
   }, [invoices, search, statusFilter]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 5;
 
+  const totalPages = Math.ceil(filteredInvoices.length / itemsPerPage);
+
+  const paginatedInvoices = useMemo(() => {
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+
+    return filteredInvoices.slice(startIndex, endIndex);
+  }, [filteredInvoices, currentPage]);
   function openAddModal() {
     setForm(emptyForm);
     setSelectedInvoice(null);
@@ -187,6 +197,7 @@ export default function InvoicesClient({
   function clearFilters() {
     setSearch("");
     setStatusFilter("All");
+    setCurrentPage(1);
   }
 
   return (
@@ -236,7 +247,10 @@ export default function InvoicesClient({
             <input
               type="text"
               value={search}
-              onChange={(event) => setSearch(event.target.value)}
+              onChange={(event) => {
+                setSearch(event.target.value);
+                setCurrentPage(1);
+              }}
               placeholder="Search invoices..."
               className="h-11 w-full rounded-xl border border-border bg-background pl-10 pr-4 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/10"
             />
@@ -244,7 +258,10 @@ export default function InvoicesClient({
 
           <select
             value={statusFilter}
-            onChange={(event) => setStatusFilter(event.target.value)}
+            onChange={(event) => {
+              setStatusFilter(event.target.value);
+              setCurrentPage(1);
+            }}
             className="h-11 w-full rounded-xl border border-border bg-background px-3 text-sm outline-none transition focus:border-primary"
           >
             <option value="All">All Status</option>
@@ -289,7 +306,7 @@ export default function InvoicesClient({
         ) : (
           <>
             <Table
-              data={filteredInvoices}
+              data={paginatedInvoices}
               columns={invoiceColumns}
               getRowKey={(invoice) => invoice.id}
               renderDesktopCells={(invoice) => (
@@ -375,8 +392,36 @@ export default function InvoicesClient({
         )}
 
         {!loading && filteredInvoices.length > 0 && (
-          <div className="border-t border-border px-4 py-4 text-center text-sm text-text-secondary md:px-5 md:text-left">
-            Showing {filteredInvoices.length} of {invoices.length} invoices
+          <div className="flex flex-col gap-4 border-t border-border px-4 py-4 md:flex-row md:items-center md:justify-between md:px-5">
+            <p className="text-center text-sm text-text-secondary md:text-left">
+              Showing {(currentPage - 1) * itemsPerPage + 1} to{" "}
+              {Math.min(currentPage * itemsPerPage, filteredInvoices.length)} of{" "}
+              {filteredInvoices.length} invoices
+            </p>
+
+            {totalPages > 1 && (
+              <div className="flex items-center justify-center gap-2">
+                <button
+                  onClick={() => setCurrentPage((page) => page - 1)}
+                  disabled={currentPage === 1}
+                  className="rounded-lg border border-border px-3 py-2 text-sm text-text-secondary transition hover:bg-background disabled:cursor-not-allowed disabled:opacity-50"
+                >
+                  Previous
+                </button>
+
+                <span className="px-2 text-sm font-medium text-text-primary">
+                  Page {currentPage} of {totalPages}
+                </span>
+
+                <button
+                  onClick={() => setCurrentPage((page) => page + 1)}
+                  disabled={currentPage === totalPages}
+                  className="rounded-lg border border-border px-3 py-2 text-sm text-text-secondary transition hover:bg-background disabled:cursor-not-allowed disabled:opacity-50"
+                >
+                  Next
+                </button>
+              </div>
+            )}
           </div>
         )}
       </div>
