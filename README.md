@@ -1,29 +1,31 @@
 # Admin Dashboard
 
-A modern and responsive admin dashboard built with Next.js, React, TypeScript, and Tailwind CSS.
+A modern, responsive admin dashboard built with Next.js, React, TypeScript, and Tailwind CSS.
 
 ## Features
 
-- Dashboard overview
-- Customer management
-- Product management
-- Invoice management
-- Profile management
-- Settings
-- CRUD operations
-- Responsive design
-- Data visualization
-- Form validation
-- Fake API with JSON data
+* Dashboard with statistics and revenue charts
+* Customer management with CRUD operations
+* Product management with CRUD operations
+* Invoice management
+* Profile management
+* Settings
+* Responsive design for desktop, tablet, and mobile
+* AI Assistant with RAG-based question answering
+* AI Assistant connected to dashboard data
+* Natural language interaction with customers, products, invoices, and dashboard statistics
 
-## Tech Stack
+## AI Assistant
 
-- Next.js
-- React
-- TypeScript
-- Tailwind CSS
-- Recharts
-- React Hook Form
-- Zod
-- Lucide React
+The project includes an AI Assistant powered by a Retrieval-Augmented Generation (RAG) architecture.
 
+The assistant can retrieve relevant information from the dashboard data and use it to answer user questions in natural language.
+
+### AI Stack
+
+* Python
+* FastAPI
+* Sentence Transformers
+* ChromaDB
+* Kie.ai
+* RAG
