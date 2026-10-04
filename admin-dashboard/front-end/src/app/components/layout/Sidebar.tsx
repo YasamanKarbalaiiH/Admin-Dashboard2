@@ -10,6 +10,7 @@ import {
   UserCircle,
   Settings,
   X,
+  Bot,
 } from "lucide-react";
 
 type SidebarProps = {
@@ -37,6 +38,11 @@ const mainItems = [
     title: "Invoices",
     href: "/invoices",
     icon: FileText,
+  },
+  {
+    title: "AI Assistant",
+    href: "/ai-assistant",
+    icon: Bot,
   },
 ];
 

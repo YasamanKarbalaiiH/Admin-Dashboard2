@@ -1,0 +1,29 @@
+Admin Dashboard
+
+This is a modern business administration dashboard designed to manage customers, products, invoices, and company information.
+
+The dashboard provides a customer management section where users can view customer information, add new customers, edit existing customers, delete customers, and view customer details.
+
+The products section is used to manage products. Users can add new products, edit product information, delete products, and view product details.
+
+The invoices section allows users to manage invoices and view invoice information.
+
+The profile section contains the user's personal and account information.
+
+The settings section is used to manage dashboard settings and user preferences.
+
+The dashboard home page provides an overview of business information, including the total number of customers, total number of products, total number of invoices, and total revenue.
+
+The dashboard includes charts for displaying business and revenue information.
+
+The dashboard is responsive and can be used on desktop, tablet, and mobile devices.
+
+The application uses Next.js, React, TypeScript, and Tailwind CSS.
+
+The AI Assistant provides information based on the documents available in the system.
+
+The AI Assistant can answer questions about customers, products, invoices, the dashboard, and other information available in the provided documents.
+
+The AI Assistant must not provide information that is not available in the provided documents.
+
+If the requested information is not available in the documents, the AI Assistant should say that it does not have enough information to answer the question.
