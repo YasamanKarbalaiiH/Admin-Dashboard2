@@ -1,0 +1,1502 @@
+[
+  {
+    "question": "How many customers are there?",
+    "context": "Dashboard Statistics: Total Customers: 125",
+    "label": "relevant"
+  },
+  {
+    "question": "What is the total number of customers?",
+    "context": "Dashboard Statistics: Total Customers: 125",
+    "label": "relevant"
+  },
+  {
+    "question": "How many customers do we have?",
+    "context": "Dashboard Statistics: Total Customers: 125",
+    "label": "relevant"
+  },
+  {
+    "question": "تعداد مشتری‌ها چقدر است؟",
+    "context": "Dashboard Statistics: Total Customers: 125",
+    "label": "relevant"
+  },
+  {
+    "question": "چند مشتری داریم؟",
+    "context": "Dashboard Statistics: Total Customers: 125",
+    "label": "relevant"
+  },
+  {
+    "question": "تعداد کل مشتریان را بگو.",
+    "context": "Dashboard Statistics: Total Customers: 125",
+    "label": "relevant"
+  },
+  {
+    "question": "What is John Smith's email?",
+    "context": "Customer: Name: John Smith, Email: john@example.com",
+    "label": "relevant"
+  },
+  {
+    "question": "ایمیل John Smith چیست؟",
+    "context": "Customer: Name: John Smith, Email: john@example.com",
+    "label": "relevant"
+  },
+  {
+    "question": "What email belongs to John Smith?",
+    "context": "Customer: Name: John Smith, Email: john@example.com",
+    "label": "relevant"
+  },
+  {
+    "question": "What is Sarah Johnson's phone number?",
+    "context": "Customer: Name: Sarah Johnson, Phone: 555-5678",
+    "label": "relevant"
+  },
+  {
+    "question": "شماره تلفن Sarah Johnson چیست؟",
+    "context": "Customer: Name: Sarah Johnson, Phone: 555-5678",
+    "label": "relevant"
+  },
+  {
+    "question": "How can I contact Sarah Johnson?",
+    "context": "Customer: Name: Sarah Johnson, Phone: 555-5678",
+    "label": "relevant"
+  },
+  {
+    "question": "Which company does John Smith belong to?",
+    "context": "Customer: Name: John Smith, Company: Tech Corp",
+    "label": "relevant"
+  },
+  {
+    "question": "شرکت John Smith چیست؟",
+    "context": "Customer: Name: John Smith, Company: Tech Corp",
+    "label": "relevant"
+  },
+  {
+    "question": "What company is John Smith from?",
+    "context": "Customer: Name: John Smith, Company: Tech Corp",
+    "label": "relevant"
+  },
+  {
+    "question": "Who is the customer with email john@example.com?",
+    "context": "Customer: Name: John Smith, Email: john@example.com",
+    "label": "relevant"
+  },
+  {
+    "question": "مشتری با ایمیل john@example.com کیست؟",
+    "context": "Customer: Name: John Smith, Email: john@example.com",
+    "label": "relevant"
+  },
+  {
+    "question": "Find the customer John Smith.",
+    "context": "Customer: Name: John Smith, Email: john@example.com",
+    "label": "relevant"
+  },
+  {
+    "question": "Is Sarah Johnson a customer?",
+    "context": "Customer: Name: Sarah Johnson, Phone: 555-5678",
+    "label": "relevant"
+  },
+  {
+    "question": "آیا Sarah Johnson مشتری است؟",
+    "context": "Customer: Name: Sarah Johnson, Phone: 555-5678",
+    "label": "relevant"
+  },
+  {
+    "question": "Tell me about Sarah Johnson's contact details.",
+    "context": "Customer: Name: Sarah Johnson, Phone: 555-5678",
+    "label": "relevant"
+  },
+  {
+    "question": "What is the customer count in the dashboard?",
+    "context": "Dashboard Statistics: Total Customers: 125",
+    "label": "relevant"
+  },
+  {
+    "question": "در داشبورد چند مشتری ثبت شده؟",
+    "context": "Dashboard Statistics: Total Customers: 125",
+    "label": "relevant"
+  },
+  {
+    "question": "Give me the number of registered customers.",
+    "context": "Dashboard Statistics: Total Customers: 125",
+    "label": "relevant"
+  },
+  {
+    "question": "تعداد مشتریان ثبت‌شده را بگو.",
+    "context": "Dashboard Statistics: Total Customers: 125",
+    "label": "relevant"
+  },
+  {
+    "question": "How many products are there?",
+    "context": "Dashboard Statistics: Total Products: 87",
+    "label": "relevant"
+  },
+  {
+    "question": "What is the total number of products?",
+    "context": "Dashboard Statistics: Total Products: 87",
+    "label": "relevant"
+  },
+  {
+    "question": "چند محصول داریم؟",
+    "context": "Dashboard Statistics: Total Products: 87",
+    "label": "relevant"
+  },
+  {
+    "question": "تعداد کل محصولات چقدر است؟",
+    "context": "Dashboard Statistics: Total Products: 87",
+    "label": "relevant"
+  },
+  {
+    "question": "What is the price of the iPhone 16 Pro?",
+    "context": "Product: Name: iPhone 16 Pro, Price: 999",
+    "label": "relevant"
+  },
+  {
+    "question": "قیمت iPhone 16 Pro چقدر است؟",
+    "context": "Product: Name: iPhone 16 Pro, Price: 999",
+    "label": "relevant"
+  },
+  {
+    "question": "How much does the iPhone 16 Pro cost?",
+    "context": "Product: Name: iPhone 16 Pro, Price: 999",
+    "label": "relevant"
+  },
+  {
+    "question": "What is the stock of iPhone 16 Pro?",
+    "context": "Product: Name: iPhone 16 Pro, Stock: 12",
+    "label": "relevant"
+  },
+  {
+    "question": "موجودی iPhone 16 Pro چقدر است؟",
+    "context": "Product: Name: iPhone 16 Pro, Stock: 12",
+    "label": "relevant"
+  },
+  {
+    "question": "How many iPhone 16 Pro units are in stock?",
+    "context": "Product: Name: iPhone 16 Pro, Stock: 12",
+    "label": "relevant"
+  },
+  {
+    "question": "What category is the iPhone 16 Pro in?",
+    "context": "Product: Name: iPhone 16 Pro, Category: Smartphone",
+    "label": "relevant"
+  },
+  {
+    "question": "دسته‌بندی iPhone 16 Pro چیست؟",
+    "context": "Product: Name: iPhone 16 Pro, Category: Smartphone",
+    "label": "relevant"
+  },
+  {
+    "question": "Is iPhone 16 Pro a smartphone?",
+    "context": "Product: Name: iPhone 16 Pro, Category: Smartphone",
+    "label": "relevant"
+  },
+  {
+    "question": "What is the price of the MacBook Air?",
+    "context": "Product: Name: MacBook Air, Price: 1200",
+    "label": "relevant"
+  },
+  {
+    "question": "قیمت MacBook Air چقدر است؟",
+    "context": "Product: Name: MacBook Air, Price: 1200",
+    "label": "relevant"
+  },
+  {
+    "question": "How much is the MacBook Air?",
+    "context": "Product: Name: MacBook Air, Price: 1200",
+    "label": "relevant"
+  },
+  {
+    "question": "How many MacBook Air units are available?",
+    "context": "Product: Name: MacBook Air, Stock: 8",
+    "label": "relevant"
+  },
+  {
+    "question": "موجودی MacBook Air چقدر است؟",
+    "context": "Product: Name: MacBook Air, Stock: 8",
+    "label": "relevant"
+  },
+  {
+    "question": "What is the stock count for MacBook Air?",
+    "context": "Product: Name: MacBook Air, Stock: 8",
+    "label": "relevant"
+  },
+  {
+    "question": "How many products are in the dashboard?",
+    "context": "Dashboard Statistics: Total Products: 87",
+    "label": "relevant"
+  },
+  {
+    "question": "در داشبورد چند محصول داریم؟",
+    "context": "Dashboard Statistics: Total Products: 87",
+    "label": "relevant"
+  },
+  {
+    "question": "Give me the product count.",
+    "context": "Dashboard Statistics: Total Products: 87",
+    "label": "relevant"
+  },
+  {
+    "question": "تعداد محصولات ثبت‌شده را بگو.",
+    "context": "Dashboard Statistics: Total Products: 87",
+    "label": "relevant"
+  },
+  {
+    "question": "What product has the name iPhone 16 Pro?",
+    "context": "Product: Name: iPhone 16 Pro, Category: Smartphone",
+    "label": "relevant"
+  },
+  {
+    "question": "اطلاعات محصول iPhone 16 Pro چیست؟",
+    "context": "Product: Name: iPhone 16 Pro, Category: Smartphone",
+    "label": "relevant"
+  },
+  {
+    "question": "How many invoices are there?",
+    "context": "Dashboard Statistics: Total Invoices: 64",
+    "label": "relevant"
+  },
+  {
+    "question": "What is the total number of invoices?",
+    "context": "Dashboard Statistics: Total Invoices: 64",
+    "label": "relevant"
+  },
+  {
+    "question": "چند فاکتور داریم؟",
+    "context": "Dashboard Statistics: Total Invoices: 64",
+    "label": "relevant"
+  },
+  {
+    "question": "تعداد کل فاکتورها چقدر است؟",
+    "context": "Dashboard Statistics: Total Invoices: 64",
+    "label": "relevant"
+  },
+  {
+    "question": "What is the status of invoice INV-1001?",
+    "context": "Invoice: Invoice Number: INV-1001, Status: Paid",
+    "label": "relevant"
+  },
+  {
+    "question": "وضعیت فاکتور INV-1001 چیست؟",
+    "context": "Invoice: Invoice Number: INV-1001, Status: Paid",
+    "label": "relevant"
+  },
+  {
+    "question": "Is invoice INV-1001 paid?",
+    "context": "Invoice: Invoice Number: INV-1001, Status: Paid",
+    "label": "relevant"
+  },
+  {
+    "question": "What is the status of invoice INV-1002?",
+    "context": "Invoice: Invoice Number: INV-1002, Status: Pending",
+    "label": "relevant"
+  },
+  {
+    "question": "وضعیت INV-1002 چیست؟",
+    "context": "Invoice: Invoice Number: INV-1002, Status: Pending",
+    "label": "relevant"
+  },
+  {
+    "question": "Is INV-1002 pending?",
+    "context": "Invoice: Invoice Number: INV-1002, Status: Pending",
+    "label": "relevant"
+  },
+  {
+    "question": "Which customer is associated with INV-1001?",
+    "context": "Invoice: Invoice Number: INV-1001, Customer: John Smith",
+    "label": "relevant"
+  },
+  {
+    "question": "فاکتور INV-1001 برای کدام مشتری است؟",
+    "context": "Invoice: Invoice Number: INV-1001, Customer: John Smith",
+    "label": "relevant"
+  },
+  {
+    "question": "Who is the customer on invoice INV-1001?",
+    "context": "Invoice: Invoice Number: INV-1001, Customer: John Smith",
+    "label": "relevant"
+  },
+  {
+    "question": "How many invoices are pending?",
+    "context": "Invoice: Invoice Number: INV-1002, Status: Pending",
+    "label": "relevant"
+  },
+  {
+    "question": "چند فاکتور در حالت Pending هستند؟",
+    "context": "Invoice: Invoice Number: INV-1002, Status: Pending",
+    "label": "relevant"
+  },
+  {
+    "question": "Is there a pending invoice?",
+    "context": "Invoice: Invoice Number: INV-1002, Status: Pending",
+    "label": "relevant"
+  },
+  {
+    "question": "What invoice belongs to John Smith?",
+    "context": "Invoice: Invoice Number: INV-1001, Customer: John Smith",
+    "label": "relevant"
+  },
+  {
+    "question": "فاکتور John Smith کدام است؟",
+    "context": "Invoice: Invoice Number: INV-1001, Customer: John Smith",
+    "label": "relevant"
+  },
+  {
+    "question": "Find John Smith's invoice.",
+    "context": "Invoice: Invoice Number: INV-1001, Customer: John Smith",
+    "label": "relevant"
+  },
+  {
+    "question": "What is INV-1001?",
+    "context": "Invoice: Invoice Number: INV-1001, Status: Paid",
+    "label": "relevant"
+  },
+  {
+    "question": "INV-1001 چه وضعیتی دارد؟",
+    "context": "Invoice: Invoice Number: INV-1001, Status: Paid",
+    "label": "relevant"
+  },
+  {
+    "question": "Tell me about invoice INV-1002.",
+    "context": "Invoice: Invoice Number: INV-1002, Status: Pending",
+    "label": "relevant"
+  },
+  {
+    "question": "در داشبورد چند فاکتور ثبت شده؟",
+    "context": "Dashboard Statistics: Total Invoices: 64",
+    "label": "relevant"
+  },
+  {
+    "question": "Give me the invoice count.",
+    "context": "Dashboard Statistics: Total Invoices: 64",
+    "label": "relevant"
+  },
+  {
+    "question": "تعداد فاکتورهای داشبورد را بگو.",
+    "context": "Dashboard Statistics: Total Invoices: 64",
+    "label": "relevant"
+  },
+  {
+    "question": "What is the total revenue?",
+    "context": "Dashboard Statistics: Total Revenue: 245000",
+    "label": "relevant"
+  },
+  {
+    "question": "How much revenue do we have?",
+    "context": "Dashboard Statistics: Total Revenue: 245000",
+    "label": "relevant"
+  },
+  {
+    "question": "مجموع درآمد چقدر است؟",
+    "context": "Dashboard Statistics: Total Revenue: 245000",
+    "label": "relevant"
+  },
+  {
+    "question": "درآمد کل چقدر است؟",
+    "context": "Dashboard Statistics: Total Revenue: 245000",
+    "label": "relevant"
+  },
+  {
+    "question": "What was the revenue in January?",
+    "context": "Monthly Revenue: Month: January, Revenue: 45000",
+    "label": "relevant"
+  },
+  {
+    "question": "درآمد ماه January چقدر بوده؟",
+    "context": "Monthly Revenue: Month: January, Revenue: 45000",
+    "label": "relevant"
+  },
+  {
+    "question": "How much did we earn in January?",
+    "context": "Monthly Revenue: Month: January, Revenue: 45000",
+    "label": "relevant"
+  },
+  {
+    "question": "What was the revenue in February?",
+    "context": "Monthly Revenue: Month: February, Revenue: 52000",
+    "label": "relevant"
+  },
+  {
+    "question": "درآمد February چقدر است؟",
+    "context": "Monthly Revenue: Month: February, Revenue: 52000",
+    "label": "relevant"
+  },
+  {
+    "question": "How much revenue was generated in February?",
+    "context": "Monthly Revenue: Month: February, Revenue: 52000",
+    "label": "relevant"
+  },
+  {
+    "question": "What is the dashboard's total revenue?",
+    "context": "Dashboard Statistics: Total Revenue: 245000",
+    "label": "relevant"
+  },
+  {
+    "question": "درآمد کل داشبورد را بگو.",
+    "context": "Dashboard Statistics: Total Revenue: 245000",
+    "label": "relevant"
+  },
+  {
+    "question": "Give me the total revenue.",
+    "context": "Dashboard Statistics: Total Revenue: 245000",
+    "label": "relevant"
+  },
+  {
+    "question": "How much money was made in January?",
+    "context": "Monthly Revenue: Month: January, Revenue: 45000",
+    "label": "relevant"
+  },
+  {
+    "question": "در January چقدر درآمد داشتیم؟",
+    "context": "Monthly Revenue: Month: January, Revenue: 45000",
+    "label": "relevant"
+  },
+  {
+    "question": "What amount was earned during February?",
+    "context": "Monthly Revenue: Month: February, Revenue: 52000",
+    "label": "relevant"
+  },
+  {
+    "question": "در ماه February چه مقدار درآمد داشتیم؟",
+    "context": "Monthly Revenue: Month: February, Revenue: 52000",
+    "label": "relevant"
+  },
+  {
+    "question": "Show me total sales revenue.",
+    "context": "Dashboard Statistics: Total Revenue: 245000",
+    "label": "relevant"
+  },
+  {
+    "question": "فروش کل چقدر درآمد داشته است؟",
+    "context": "Dashboard Statistics: Total Revenue: 245000",
+    "label": "relevant"
+  },
+  {
+    "question": "What is our overall revenue figure?",
+    "context": "Dashboard Statistics: Total Revenue: 245000",
+    "label": "relevant"
+  },
+  {
+    "question": "مقدار درآمد کلی را بگو.",
+    "context": "Dashboard Statistics: Total Revenue: 245000",
+    "label": "relevant"
+  },
+  {
+    "question": "Revenue for January?",
+    "context": "Monthly Revenue: Month: January, Revenue: 45000",
+    "label": "relevant"
+  },
+  {
+    "question": "Revenue for February?",
+    "context": "Monthly Revenue: Month: February, Revenue: 52000",
+    "label": "relevant"
+  },
+  {
+    "question": "درآمد January را نشان بده.",
+    "context": "Monthly Revenue: Month: January, Revenue: 45000",
+    "label": "relevant"
+  },
+  {
+    "question": "درآمد February را نشان بده.",
+    "context": "Monthly Revenue: Month: February, Revenue: 52000",
+    "label": "relevant"
+  },
+  {
+    "question": "What is the admin user's name?",
+    "context": "Profile: Name: Admin User",
+    "label": "relevant"
+  },
+  {
+    "question": "نام کاربر ادمین چیست؟",
+    "context": "Profile: Name: Admin User",
+    "label": "relevant"
+  },
+  {
+    "question": "What is the admin email?",
+    "context": "Profile: Email: admin@example.com",
+    "label": "relevant"
+  },
+  {
+    "question": "ایمیل ادمین چیست؟",
+    "context": "Profile: Email: admin@example.com",
+    "label": "relevant"
+  },
+  {
+    "question": "What role does the admin have?",
+    "context": "Profile: Role: Administrator",
+    "label": "relevant"
+  },
+  {
+    "question": "نقش کاربر ادمین چیست؟",
+    "context": "Profile: Role: Administrator",
+    "label": "relevant"
+  },
+  {
+    "question": "What is the administrator's role?",
+    "context": "Profile: Role: Administrator",
+    "label": "relevant"
+  },
+  {
+    "question": "Which email is configured in the profile?",
+    "context": "Profile: Email: admin@example.com",
+    "label": "relevant"
+  },
+  {
+    "question": "ایمیل موجود در پروفایل چیست؟",
+    "context": "Profile: Email: admin@example.com",
+    "label": "relevant"
+  },
+  {
+    "question": "What name is shown in the profile?",
+    "context": "Profile: Name: Admin User",
+    "label": "relevant"
+  },
+  {
+    "question": "نام ثبت‌شده در پروفایل چیست؟",
+    "context": "Profile: Name: Admin User",
+    "label": "relevant"
+  },
+  {
+    "question": "Is the user an administrator?",
+    "context": "Profile: Role: Administrator",
+    "label": "relevant"
+  },
+  {
+    "question": "آیا کاربر مدیر است؟",
+    "context": "Profile: Role: Administrator",
+    "label": "relevant"
+  },
+  {
+    "question": "Who is the current profile user?",
+    "context": "Profile: Name: Admin User",
+    "label": "relevant"
+  },
+  {
+    "question": "کاربر فعلی پروفایل کیست؟",
+    "context": "Profile: Name: Admin User",
+    "label": "relevant"
+  },
+  {
+    "question": "What is the profile email address?",
+    "context": "Profile: Email: admin@example.com",
+    "label": "relevant"
+  },
+  {
+    "question": "آدرس ایمیل پروفایل چیست؟",
+    "context": "Profile: Email: admin@example.com",
+    "label": "relevant"
+  },
+  {
+    "question": "Tell me the profile name.",
+    "context": "Profile: Name: Admin User",
+    "label": "relevant"
+  },
+  {
+    "question": "نام پروفایل را بگو.",
+    "context": "Profile: Name: Admin User",
+    "label": "relevant"
+  },
+  {
+    "question": "Tell me the profile role.",
+    "context": "Profile: Role: Administrator",
+    "label": "relevant"
+  },
+  {
+    "question": "نقش پروفایل را بگو.",
+    "context": "Profile: Role: Administrator",
+    "label": "relevant"
+  },
+  {
+    "question": "What account role is configured?",
+    "context": "Profile: Role: Administrator",
+    "label": "relevant"
+  },
+  {
+    "question": "نقش حساب کاربری چیست؟",
+    "context": "Profile: Role: Administrator",
+    "label": "relevant"
+  },
+  {
+    "question": "What is the user's email?",
+    "context": "Profile: Email: admin@example.com",
+    "label": "relevant"
+  },
+  {
+    "question": "ایمیل کاربر چیست؟",
+    "context": "Profile: Email: admin@example.com",
+    "label": "relevant"
+  },
+  {
+    "question": "Is dark mode enabled?",
+    "context": "Settings: Dark Mode: true",
+    "label": "relevant"
+  },
+  {
+    "question": "آیا حالت تاریک فعال است؟",
+    "context": "Settings: Dark Mode: true",
+    "label": "relevant"
+  },
+  {
+    "question": "Is dark mode on?",
+    "context": "Settings: Dark Mode: true",
+    "label": "relevant"
+  },
+  {
+    "question": "حالت تاریک روشن است؟",
+    "context": "Settings: Dark Mode: true",
+    "label": "relevant"
+  },
+  {
+    "question": "Are email notifications enabled?",
+    "context": "Settings: Email Notifications: true",
+    "label": "relevant"
+  },
+  {
+    "question": "آیا اعلان‌های ایمیلی فعال هستند؟",
+    "context": "Settings: Email Notifications: true",
+    "label": "relevant"
+  },
+  {
+    "question": "Are email notifications turned on?",
+    "context": "Settings: Email Notifications: true",
+    "label": "relevant"
+  },
+  {
+    "question": "وضعیت اعلان‌های ایمیلی چیست؟",
+    "context": "Settings: Email Notifications: true",
+    "label": "relevant"
+  },
+  {
+    "question": "What is the dark mode setting?",
+    "context": "Settings: Dark Mode: true",
+    "label": "relevant"
+  },
+  {
+    "question": "تنظیم Dark Mode چیست؟",
+    "context": "Settings: Dark Mode: true",
+    "label": "relevant"
+  },
+  {
+    "question": "What is the email notification setting?",
+    "context": "Settings: Email Notifications: true",
+    "label": "relevant"
+  },
+  {
+    "question": "تنظیم اعلان ایمیل چیست؟",
+    "context": "Settings: Email Notifications: true",
+    "label": "relevant"
+  },
+  {
+    "question": "Does the dashboard use dark mode?",
+    "context": "Settings: Dark Mode: true",
+    "label": "relevant"
+  },
+  {
+    "question": "داشبورد از حالت تاریک استفاده می‌کند؟",
+    "context": "Settings: Dark Mode: true",
+    "label": "relevant"
+  },
+  {
+    "question": "Does the app send email notifications?",
+    "context": "Settings: Email Notifications: true",
+    "label": "relevant"
+  },
+  {
+    "question": "آیا برنامه اعلان ایمیلی می‌فرستد؟",
+    "context": "Settings: Email Notifications: true",
+    "label": "relevant"
+  },
+  {
+    "question": "Tell me whether dark mode is enabled.",
+    "context": "Settings: Dark Mode: true",
+    "label": "relevant"
+  },
+  {
+    "question": "فعال بودن حالت تاریک را بررسی کن.",
+    "context": "Settings: Dark Mode: true",
+    "label": "relevant"
+  },
+  {
+    "question": "Tell me whether email notifications are enabled.",
+    "context": "Settings: Email Notifications: true",
+    "label": "relevant"
+  },
+  {
+    "question": "فعال بودن اعلان ایمیل را بررسی کن.",
+    "context": "Settings: Email Notifications: true",
+    "label": "relevant"
+  },
+  {
+    "question": "Is the dark theme enabled in settings?",
+    "context": "Settings: Dark Mode: true",
+    "label": "relevant"
+  },
+  {
+    "question": "در تنظیمات تم تاریک فعال است؟",
+    "context": "Settings: Dark Mode: true",
+    "label": "relevant"
+  },
+  {
+    "question": "What is the notification status?",
+    "context": "Settings: Email Notifications: true",
+    "label": "relevant"
+  },
+  {
+    "question": "وضعیت نوتیفیکیشن ایمیل چیست؟",
+    "context": "Settings: Email Notifications: true",
+    "label": "relevant"
+  },
+  {
+    "question": "How many customers are there?",
+    "context": "Customer: Name: John Smith, Email: john@example.com",
+    "label": "not_relevant"
+  },
+  {
+    "question": "How many customers are there?",
+    "context": "Customer: Name: Sarah Johnson, Phone: 555-5678",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is John Smith's phone number?",
+    "context": "Customer: Name: John Smith, Company: Tech Corp",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is John Smith's phone number?",
+    "context": "Customer: Name: Sarah Johnson, Phone: 555-5678",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is Sarah Johnson's email?",
+    "context": "Customer: Name: Sarah Johnson, Phone: 555-5678",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is Sarah Johnson's email?",
+    "context": "Customer: Name: John Smith, Email: john@example.com",
+    "label": "not_relevant"
+  },
+  {
+    "question": "Which company does John Smith belong to?",
+    "context": "Customer: Name: John Smith, Email: john@example.com",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is the customer count?",
+    "context": "Customer: Name: John Smith, Company: Tech Corp",
+    "label": "not_relevant"
+  },
+  {
+    "question": "تعداد مشتری‌ها چقدر است؟",
+    "context": "Customer: Name: John Smith, Phone: 555-1234",
+    "label": "not_relevant"
+  },
+  {
+    "question": "تعداد مشتری‌ها چقدر است؟",
+    "context": "Customer: Name: Sarah Johnson, Email: sarah@example.com",
+    "label": "not_relevant"
+  },
+  {
+    "question": "How many customers are there?",
+    "context": "Product: Name: iPhone 16 Pro, Price: 999",
+    "label": "not_relevant"
+  },
+  {
+    "question": "How many customers are there?",
+    "context": "Dashboard Statistics: Total Products: 87",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is John Smith's email?",
+    "context": "Invoice: Invoice Number: INV-1001, Status: Paid",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is Sarah Johnson's phone number?",
+    "context": "Product: Name: MacBook Air, Stock: 8",
+    "label": "not_relevant"
+  },
+  {
+    "question": "شرکت John Smith چیست؟",
+    "context": "Dashboard Statistics: Total Revenue: 245000",
+    "label": "not_relevant"
+  },
+  {
+    "question": "چند مشتری داریم؟",
+    "context": "Settings: Dark Mode: true",
+    "label": "not_relevant"
+  },
+  {
+    "question": "Who is John Smith?",
+    "context": "Profile: Name: Admin User",
+    "label": "not_relevant"
+  },
+  {
+    "question": "مشتری با ایمیل john@example.com کیست؟",
+    "context": "Invoice: Invoice Number: INV-1002, Status: Pending",
+    "label": "not_relevant"
+  },
+  {
+    "question": "How many customers do we have?",
+    "context": "Monthly Revenue: Month: January, Revenue: 45000",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is the customer count?",
+    "context": "Settings: Email Notifications: true",
+    "label": "not_relevant"
+  },
+  {
+    "question": "How many products are there?",
+    "context": "Product: Name: iPhone 16 Pro, Price: 999",
+    "label": "not_relevant"
+  },
+  {
+    "question": "How many products are there?",
+    "context": "Product: Name: MacBook Air, Stock: 8",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is the price of iPhone 16 Pro?",
+    "context": "Product: Name: iPhone 16 Pro, Stock: 12",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is the stock of iPhone 16 Pro?",
+    "context": "Product: Name: iPhone 16 Pro, Price: 999",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What category is iPhone 16 Pro?",
+    "context": "Product: Name: iPhone 16 Pro, Price: 999",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is the price of MacBook Air?",
+    "context": "Product: Name: MacBook Air, Stock: 8",
+    "label": "not_relevant"
+  },
+  {
+    "question": "How many MacBook Air units are available?",
+    "context": "Product: Name: MacBook Air, Price: 1200",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is the product count?",
+    "context": "Product: Name: iPhone 16 Pro, Category: Smartphone",
+    "label": "not_relevant"
+  },
+  {
+    "question": "چند محصول داریم؟",
+    "context": "Product: Name: iPhone 16 Pro, Price: 999",
+    "label": "not_relevant"
+  },
+  {
+    "question": "قیمت iPhone 16 Pro چقدر است؟",
+    "context": "Product: Name: iPhone 16 Pro, Stock: 12",
+    "label": "not_relevant"
+  },
+  {
+    "question": "موجودی iPhone 16 Pro چقدر است؟",
+    "context": "Product: Name: iPhone 16 Pro, Category: Smartphone",
+    "label": "not_relevant"
+  },
+  {
+    "question": "قیمت MacBook Air چقدر است؟",
+    "context": "Product: Name: MacBook Air, Stock: 8",
+    "label": "not_relevant"
+  },
+  {
+    "question": "How many products are there?",
+    "context": "Dashboard Statistics: Total Customers: 125",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is the price of iPhone 16 Pro?",
+    "context": "Customer: Name: John Smith, Email: john@example.com",
+    "label": "not_relevant"
+  },
+  {
+    "question": "موجودی iPhone 16 Pro چقدر است؟",
+    "context": "Invoice: Invoice Number: INV-1001, Status: Paid",
+    "label": "not_relevant"
+  },
+  {
+    "question": "How many products are in the dashboard?",
+    "context": "Monthly Revenue: Month: February, Revenue: 52000",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What category is iPhone 16 Pro?",
+    "context": "Profile: Role: Administrator",
+    "label": "not_relevant"
+  },
+  {
+    "question": "چند محصول داریم؟",
+    "context": "Settings: Dark Mode: true",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is the stock of MacBook Air?",
+    "context": "Customer: Name: Sarah Johnson, Phone: 555-5678",
+    "label": "not_relevant"
+  },
+  {
+    "question": "اطلاعات محصول iPhone 16 Pro چیست؟",
+    "context": "Invoice: Invoice Number: INV-1002, Status: Pending",
+    "label": "not_relevant"
+  },
+  {
+    "question": "How many invoices are there?",
+    "context": "Invoice: Invoice Number: INV-1001, Status: Paid",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is the status of INV-1001?",
+    "context": "Invoice: Invoice Number: INV-1001, Customer: John Smith",
+    "label": "not_relevant"
+  },
+  {
+    "question": "Who is the customer on INV-1001?",
+    "context": "Invoice: Invoice Number: INV-1001, Status: Paid",
+    "label": "not_relevant"
+  },
+  {
+    "question": "Is INV-1001 paid?",
+    "context": "Invoice: Invoice Number: INV-1002, Status: Pending",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is the status of INV-1002?",
+    "context": "Invoice: Invoice Number: INV-1002, Customer: Sarah Johnson",
+    "label": "not_relevant"
+  },
+  {
+    "question": "How many invoices are pending?",
+    "context": "Invoice: Invoice Number: INV-1001, Status: Paid",
+    "label": "not_relevant"
+  },
+  {
+    "question": "چند فاکتور داریم؟",
+    "context": "Invoice: Invoice Number: INV-1001, Customer: John Smith",
+    "label": "not_relevant"
+  },
+  {
+    "question": "وضعیت فاکتور INV-1001 چیست؟",
+    "context": "Invoice: Invoice Number: INV-1001, Customer: John Smith",
+    "label": "not_relevant"
+  },
+  {
+    "question": "فاکتور INV-1001 برای کدام مشتری است؟",
+    "context": "Invoice: Invoice Number: INV-1001, Status: Paid",
+    "label": "not_relevant"
+  },
+  {
+    "question": "Is INV-1002 pending?",
+    "context": "Invoice: Invoice Number: INV-1002, Customer: Sarah Johnson",
+    "label": "not_relevant"
+  },
+  {
+    "question": "How many invoices are pending?",
+    "context": "Invoice: Invoice Number: INV-1003, Status: Paid",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is the invoice count?",
+    "context": "Invoice: Invoice Number: INV-1002, Status: Pending",
+    "label": "not_relevant"
+  },
+  {
+    "question": "How many invoices are there?",
+    "context": "Dashboard Statistics: Total Products: 87",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is the status of INV-1001?",
+    "context": "Product: Name: iPhone 16 Pro, Stock: 12",
+    "label": "not_relevant"
+  },
+  {
+    "question": "Who is the customer on INV-1001?",
+    "context": "Customer: Name: John Smith, Email: john@example.com",
+    "label": "not_relevant"
+  },
+  {
+    "question": "چند فاکتور داریم؟",
+    "context": "Dashboard Statistics: Total Customers: 125",
+    "label": "not_relevant"
+  },
+  {
+    "question": "How many invoices are pending?",
+    "context": "Monthly Revenue: Month: January, Revenue: 45000",
+    "label": "not_relevant"
+  },
+  {
+    "question": "وضعیت INV-1002 چیست؟",
+    "context": "Settings: Email Notifications: true",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is INV-1001?",
+    "context": "Profile: Name: Admin User",
+    "label": "not_relevant"
+  },
+  {
+    "question": "فاکتور John Smith کدام است؟",
+    "context": "Product: Name: MacBook Air, Price: 1200",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is the total revenue?",
+    "context": "Monthly Revenue: Month: January, Revenue: 45000",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is the total revenue?",
+    "context": "Monthly Revenue: Month: February, Revenue: 52000",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What was January revenue?",
+    "context": "Dashboard Statistics: Total Revenue: 245000",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What was February revenue?",
+    "context": "Dashboard Statistics: Total Revenue: 245000",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What was January revenue?",
+    "context": "Monthly Revenue: Month: February, Revenue: 52000",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What was February revenue?",
+    "context": "Monthly Revenue: Month: January, Revenue: 45000",
+    "label": "not_relevant"
+  },
+  {
+    "question": "مجموع درآمد چقدر است؟",
+    "context": "Monthly Revenue: Month: January, Revenue: 45000",
+    "label": "not_relevant"
+  },
+  {
+    "question": "درآمد January چقدر بوده؟",
+    "context": "Monthly Revenue: Month: February, Revenue: 52000",
+    "label": "not_relevant"
+  },
+  {
+    "question": "درآمد February چقدر است؟",
+    "context": "Monthly Revenue: Month: January, Revenue: 45000",
+    "label": "not_relevant"
+  },
+  {
+    "question": "درآمد کل چقدر است؟",
+    "context": "Monthly Revenue: Month: February, Revenue: 52000",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is the total revenue?",
+    "context": "Product: Name: iPhone 16 Pro, Price: 999",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What was January revenue?",
+    "context": "Customer: Name: John Smith, Company: Tech Corp",
+    "label": "not_relevant"
+  },
+  {
+    "question": "مجموع درآمد چقدر است؟",
+    "context": "Invoice: Invoice Number: INV-1001, Status: Paid",
+    "label": "not_relevant"
+  },
+  {
+    "question": "How much revenue do we have?",
+    "context": "Settings: Dark Mode: true",
+    "label": "not_relevant"
+  },
+  {
+    "question": "درآمد February چقدر است؟",
+    "context": "Profile: Email: admin@example.com",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is our overall revenue?",
+    "context": "Dashboard Statistics: Total Products: 87",
+    "label": "not_relevant"
+  },
+  {
+    "question": "Revenue for January?",
+    "context": "Dashboard Statistics: Total Customers: 125",
+    "label": "not_relevant"
+  },
+  {
+    "question": "درآمد کل داشبورد را بگو.",
+    "context": "Customer: Name: Sarah Johnson, Phone: 555-5678",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is the admin user's name?",
+    "context": "Profile: Email: admin@example.com",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is the admin email?",
+    "context": "Profile: Name: Admin User",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What role does the admin have?",
+    "context": "Profile: Name: Admin User",
+    "label": "not_relevant"
+  },
+  {
+    "question": "Who is the current profile user?",
+    "context": "Profile: Role: Administrator",
+    "label": "not_relevant"
+  },
+  {
+    "question": "نام کاربر ادمین چیست؟",
+    "context": "Profile: Role: Administrator",
+    "label": "not_relevant"
+  },
+  {
+    "question": "ایمیل ادمین چیست؟",
+    "context": "Profile: Name: Admin User",
+    "label": "not_relevant"
+  },
+  {
+    "question": "نقش کاربر ادمین چیست؟",
+    "context": "Profile: Email: admin@example.com",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is the user's email?",
+    "context": "Settings: Email Notifications: true",
+    "label": "not_relevant"
+  },
+  {
+    "question": "نام پروفایل را بگو.",
+    "context": "Customer: Name: John Smith, Email: john@example.com",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is the profile role?",
+    "context": "Invoice: Invoice Number: INV-1001, Status: Paid",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is the admin email?",
+    "context": "Dashboard Statistics: Total Customers: 125",
+    "label": "not_relevant"
+  },
+  {
+    "question": "Who is the profile user?",
+    "context": "Product: Name: MacBook Air, Price: 1200",
+    "label": "not_relevant"
+  },
+  {
+    "question": "Is dark mode enabled?",
+    "context": "Settings: Email Notifications: true",
+    "label": "not_relevant"
+  },
+  {
+    "question": "Are email notifications enabled?",
+    "context": "Settings: Dark Mode: true",
+    "label": "not_relevant"
+  },
+  {
+    "question": "Is dark mode on?",
+    "context": "Settings: Email Notifications: true",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is the notification setting?",
+    "context": "Settings: Dark Mode: true",
+    "label": "not_relevant"
+  },
+  {
+    "question": "آیا حالت تاریک فعال است؟",
+    "context": "Settings: Email Notifications: true",
+    "label": "not_relevant"
+  },
+  {
+    "question": "آیا اعلان‌های ایمیلی فعال هستند؟",
+    "context": "Settings: Dark Mode: true",
+    "label": "not_relevant"
+  },
+  {
+    "question": "تنظیم Dark Mode چیست؟",
+    "context": "Settings: Email Notifications: true",
+    "label": "not_relevant"
+  },
+  {
+    "question": "وضعیت اعلان‌های ایمیلی چیست؟",
+    "context": "Settings: Dark Mode: true",
+    "label": "not_relevant"
+  },
+  {
+    "question": "Is dark mode enabled?",
+    "context": "Profile: Role: Administrator",
+    "label": "not_relevant"
+  },
+  {
+    "question": "Are email notifications enabled?",
+    "context": "Dashboard Statistics: Total Invoices: 64",
+    "label": "not_relevant"
+  },
+  {
+    "question": "حالت تاریک روشن است؟",
+    "context": "Product: Name: iPhone 16 Pro, Category: Smartphone",
+    "label": "not_relevant"
+  },
+  {
+    "question": "آیا برنامه اعلان ایمیلی می‌فرستد؟",
+    "context": "Customer: Name: Sarah Johnson, Phone: 555-5678",
+    "label": "not_relevant"
+  },
+  {
+    "question": "How many customers are there?",
+    "context": "Dashboard Statistics: Total Invoices: 64",
+    "label": "not_relevant"
+  },
+  {
+    "question": "How many products are there?",
+    "context": "Dashboard Statistics: Total Customers: 125",
+    "label": "not_relevant"
+  },
+  {
+    "question": "How many invoices are there?",
+    "context": "Dashboard Statistics: Total Products: 87",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is the total revenue?",
+    "context": "Dashboard Statistics: Total Products: 87",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is John Smith's email?",
+    "context": "Dashboard Statistics: Total Customers: 125",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is the price of iPhone 16 Pro?",
+    "context": "Dashboard Statistics: Total Revenue: 245000",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is the status of INV-1001?",
+    "context": "Dashboard Statistics: Total Customers: 125",
+    "label": "not_relevant"
+  },
+  {
+    "question": "Is dark mode enabled?",
+    "context": "Dashboard Statistics: Total Revenue: 245000",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is the admin email?",
+    "context": "Dashboard Statistics: Total Products: 87",
+    "label": "not_relevant"
+  },
+  {
+    "question": "درآمد کل چقدر است؟",
+    "context": "Dashboard Statistics: Total Customers: 125",
+    "label": "not_relevant"
+  },
+  {
+    "question": "چند مشتری داریم؟",
+    "context": "Dashboard Statistics: Total Products: 87",
+    "label": "not_relevant"
+  },
+  {
+    "question": "چند محصول داریم؟",
+    "context": "Dashboard Statistics: Total Invoices: 64",
+    "label": "not_relevant"
+  },
+  {
+    "question": "چند فاکتور داریم؟",
+    "context": "Dashboard Statistics: Total Revenue: 245000",
+    "label": "not_relevant"
+  },
+  {
+    "question": "ایمیل John Smith چیست؟",
+    "context": "Settings: Dark Mode: true",
+    "label": "not_relevant"
+  },
+  {
+    "question": "قیمت iPhone 16 Pro چقدر است؟",
+    "context": "Profile: Name: Admin User",
+    "label": "not_relevant"
+  },
+  {
+    "question": "وضعیت INV-1001 چیست؟",
+    "context": "Customer: Name: John Smith, Email: john@example.com",
+    "label": "not_relevant"
+  },
+  {
+    "question": "نقش ادمین چیست؟",
+    "context": "Product: Name: iPhone 16 Pro, Price: 999",
+    "label": "not_relevant"
+  },
+  {
+    "question": "آیا حالت تاریک فعال است؟",
+    "context": "Invoice: Invoice Number: INV-1001, Status: Paid",
+    "label": "not_relevant"
+  },
+  {
+    "question": "درآمد January چقدر بوده؟",
+    "context": "Settings: Email Notifications: true",
+    "label": "not_relevant"
+  },
+  {
+    "question": "موجودی MacBook Air چقدر است؟",
+    "context": "Dashboard Statistics: Total Revenue: 245000",
+    "label": "not_relevant"
+  },
+  {
+    "question": "How many customers are there?",
+    "context": "Product: Name: MacBook Air, Price: 1200",
+    "label": "not_relevant"
+  },
+  {
+    "question": "How many customers are there?",
+    "context": "Invoice: Invoice Number: INV-1002, Status: Pending",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is John Smith's email?",
+    "context": "Product: Name: iPhone 16 Pro, Stock: 12",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is Sarah Johnson's phone number?",
+    "context": "Invoice: Invoice Number: INV-1002, Status: Pending",
+    "label": "not_relevant"
+  },
+  {
+    "question": "Which company does John Smith belong to?",
+    "context": "Customer: Name: Sarah Johnson, Phone: 555-5678",
+    "label": "not_relevant"
+  },
+  {
+    "question": "How many products are there?",
+    "context": "Customer: Name: John Smith, Company: Tech Corp",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is the price of iPhone 16 Pro?",
+    "context": "Product: Name: MacBook Air, Price: 1200",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is the stock of iPhone 16 Pro?",
+    "context": "Product: Name: MacBook Air, Stock: 8",
+    "label": "not_relevant"
+  },
+  {
+    "question": "How many invoices are there?",
+    "context": "Customer: Name: John Smith, Email: john@example.com",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is the status of INV-1001?",
+    "context": "Invoice: Invoice Number: INV-1001, Customer: John Smith",
+    "label": "not_relevant"
+  },
+  {
+    "question": "Who is the customer on INV-1001?",
+    "context": "Invoice: Invoice Number: INV-1002, Customer: Sarah Johnson",
+    "label": "not_relevant"
+  },
+  {
+    "question": "How many invoices are pending?",
+    "context": "Dashboard Statistics: Total Invoices: 64",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is the total revenue?",
+    "context": "Monthly Revenue: Month: February, Revenue: 52000",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What was January revenue?",
+    "context": "Monthly Revenue: Month: January, Revenue: 45000",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is the admin email?",
+    "context": "Profile: Name: Admin User",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What is the admin user's name?",
+    "context": "Profile: Role: Administrator",
+    "label": "not_relevant"
+  },
+  {
+    "question": "What role does the admin have?",
+    "context": "Profile: Email: admin@example.com",
+    "label": "not_relevant"
+  },
+  {
+    "question": "Is dark mode enabled?",
+    "context": "Settings: Dark Mode: true",
+    "label": "not_relevant"
+  },
+  {
+    "question": "Are email notifications enabled?",
+    "context": "Settings: Email Notifications: true",
+    "label": "not_relevant"
+  },
+  {
+    "question": "آیا حالت تاریک فعال است؟",
+    "context": "Settings: Dark Mode: true",
+    "label": "not_relevant"
+  },
+  {
+    "question": "چند مشتری داریم؟",
+    "context": "Customer: Name: John Smith, Company: Tech Corp",
+    "label": "not_relevant"
+  },
+  {
+    "question": "چند محصول داریم؟",
+    "context": "Product: Name: iPhone 16 Pro, Category: Smartphone",
+    "label": "not_relevant"
+  },
+  {
+    "question": "چند فاکتور داریم؟",
+    "context": "Invoice: Invoice Number: INV-1001, Status: Paid",
+    "label": "not_relevant"
+  },
+  {
+    "question": "مجموع درآمد چقدر است؟",
+    "context": "Dashboard Statistics: Total Revenue: 245000",
+    "label": "not_relevant"
+  },
+  {
+    "question": "ایمیل ادمین چیست؟",
+    "context": "Profile: Email: admin@example.com",
+    "label": "not_relevant"
+  },
+  {
+    "question": "قیمت iPhone 16 Pro چقدر است؟",
+    "context": "Product: Name: iPhone 16 Pro, Price: 999",
+    "label": "not_relevant"
+  },
+  {
+    "question": "وضعیت INV-1002 چیست؟",
+    "context": "Invoice: Invoice Number: INV-1002, Status: Pending",
+    "label": "not_relevant"
+  },
+  {
+    "question": "درآمد January چقدر بوده؟",
+    "context": "Monthly Revenue: Month: January, Revenue: 45000",
+    "label": "not_relevant"
+  },
+  {
+    "question": "موجودی MacBook Air چقدر است؟",
+    "context": "Product: Name: MacBook Air, Stock: 8",
+    "label": "relevant"
+  }
+]

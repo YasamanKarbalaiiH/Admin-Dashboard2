@@ -1,0 +1,354 @@
+[
+  {
+    "question": "چند مشتری داریم؟",
+    "label": "rag"
+  },
+  {
+    "question": "تعداد مشتری‌ها چقدر است؟",
+    "label": "rag"
+  },
+  {
+    "question": "تعداد کل مشتریان را بگو",
+    "label": "rag"
+  },
+  {
+    "question": "در داشبورد چند مشتری ثبت شده؟",
+    "label": "rag"
+  },
+  {
+    "question": "How many customers are there?",
+    "label": "rag"
+  },
+  {
+    "question": "How many customers do we have?",
+    "label": "rag"
+  },
+  {
+    "question": "What is the total number of customers?",
+    "label": "rag"
+  },
+  {
+    "question": "تعداد محصولات چقدر است؟",
+    "label": "rag"
+  },
+  {
+    "question": "چند محصول داریم؟",
+    "label": "rag"
+  },
+  {
+    "question": "تعداد کل محصولات را بگو",
+    "label": "rag"
+  },
+  {
+    "question": "How many products are there?",
+    "label": "rag"
+  },
+  {
+    "question": "How many products do we have?",
+    "label": "rag"
+  },
+  {
+    "question": "What is the total number of products?",
+    "label": "rag"
+  },
+  {
+    "question": "درآمد کل چقدر است؟",
+    "label": "rag"
+  },
+  {
+    "question": "مجموع درآمد چقدر بوده؟",
+    "label": "rag"
+  },
+  {
+    "question": "درآمد داشبورد چقدر است؟",
+    "label": "rag"
+  },
+  {
+    "question": "What is the total revenue?",
+    "label": "rag"
+  },
+  {
+    "question": "How much revenue do we have?",
+    "label": "rag"
+  },
+  {
+    "question": "What is our total revenue?",
+    "label": "rag"
+  },
+  {
+    "question": "چند فاکتور داریم؟",
+    "label": "rag"
+  },
+  {
+    "question": "تعداد فاکتورها چقدر است؟",
+    "label": "rag"
+  },
+  {
+    "question": "How many invoices are there?",
+    "label": "rag"
+  },
+  {
+    "question": "What is the total number of invoices?",
+    "label": "rag"
+  },
+  {
+    "question": "قیمت لپ تاپ چقدر است؟",
+    "label": "rag"
+  },
+  {
+    "question": "قیمت محصول iPhone 16 Pro چقدر است؟",
+    "label": "rag"
+  },
+  {
+    "question": "موجودی محصولات چقدر است؟",
+    "label": "rag"
+  },
+  {
+    "question": "How much is the iPhone 16 Pro?",
+    "label": "rag"
+  },
+  {
+    "question": "What is the price of the iPhone 16 Pro?",
+    "label": "rag"
+  },
+  {
+    "question": "What products are currently in stock?",
+    "label": "rag"
+  },
+  {
+    "question": "وضعیت فاکتور INV-1001 چیست؟",
+    "label": "rag"
+  },
+  {
+    "question": "فاکتور INV-1001 چه وضعیتی دارد؟",
+    "label": "rag"
+  },
+  {
+    "question": "What is the status of invoice INV-1001?",
+    "label": "rag"
+  },
+  {
+    "question": "Is invoice INV-1001 paid?",
+    "label": "rag"
+  },
+  {
+    "question": "ایمیل مشتری علی چیست؟",
+    "label": "rag"
+  },
+  {
+    "question": "شماره تلفن مشتری چیست؟",
+    "label": "rag"
+  },
+  {
+    "question": "What is the customer's email?",
+    "label": "rag"
+  },
+  {
+    "question": "What is the customer's phone number?",
+    "label": "rag"
+  },
+  {
+    "question": "شماره تلفن پروفایل چیست؟",
+    "label": "rag"
+  },
+  {
+    "question": "ایمیل ادمین چیست؟",
+    "label": "rag"
+  },
+  {
+    "question": "What is the profile phone number?",
+    "label": "rag"
+  },
+  {
+    "question": "What is the administrator's email?",
+    "label": "rag"
+  },
+  {
+    "question": "آیا اعلان ایمیلی فعال است؟",
+    "label": "rag"
+  },
+  {
+    "question": "وضعیت Dark Mode چیست؟",
+    "label": "rag"
+  },
+  {
+    "question": "آیا Push Notification فعال است؟",
+    "label": "rag"
+  },
+  {
+    "question": "Are email notifications enabled?",
+    "label": "rag"
+  },
+  {
+    "question": "Is dark mode enabled?",
+    "label": "rag"
+  },
+  {
+    "question": "Is push notification enabled?",
+    "label": "rag"
+  },
+  {
+    "question": "درآمد ماه گذشته چقدر بوده؟",
+    "label": "rag"
+  },
+  {
+    "question": "درآمد ماه January چقدر بوده؟",
+    "label": "rag"
+  },
+  {
+    "question": "How much revenue did we make last month?",
+    "label": "rag"
+  },
+  {
+    "question": "What was the revenue in January?",
+    "label": "rag"
+  },
+  {
+    "question": "تاریخ عضویت کاربر چیست؟",
+    "label": "rag"
+  },
+  {
+    "question": "تاریخ پیوستن مدیر چه زمانی بوده؟",
+    "label": "rag"
+  },
+  {
+    "question": "When did the administrator join?",
+    "label": "rag"
+  },
+  {
+    "question": "Python چیست؟",
+    "label": "no_rag"
+  },
+  {
+    "question": "Python چیست و چه کاربردی دارد؟",
+    "label": "no_rag"
+  },
+  {
+    "question": "What is Python?",
+    "label": "no_rag"
+  },
+  {
+    "question": "What is Python used for?",
+    "label": "no_rag"
+  },
+  {
+    "question": "React چیست؟",
+    "label": "no_rag"
+  },
+  {
+    "question": "What is React?",
+    "label": "no_rag"
+  },
+  {
+    "question": "Next.js چیست؟",
+    "label": "no_rag"
+  },
+  {
+    "question": "What is Next.js?",
+    "label": "no_rag"
+  },
+  {
+    "question": "REST API چیست؟",
+    "label": "no_rag"
+  },
+  {
+    "question": "What is a REST API?",
+    "label": "no_rag"
+  },
+  {
+    "question": "تفاوت GET و POST چیست؟",
+    "label": "no_rag"
+  },
+  {
+    "question": "What is the difference between GET and POST?",
+    "label": "no_rag"
+  },
+  {
+    "question": "چطور یک API در Python بسازم؟",
+    "label": "no_rag"
+  },
+  {
+    "question": "How can I build an API in Python?",
+    "label": "no_rag"
+  },
+  {
+    "question": "چطور React یاد بگیرم؟",
+    "label": "no_rag"
+  },
+  {
+    "question": "How can I learn React?",
+    "label": "no_rag"
+  },
+  {
+    "question": "تفاوت SQL و NoSQL چیست؟",
+    "label": "no_rag"
+  },
+  {
+    "question": "What is the difference between SQL and NoSQL?",
+    "label": "no_rag"
+  },
+  {
+    "question": "Machine Learning چیست؟",
+    "label": "no_rag"
+  },
+  {
+    "question": "What is Machine Learning?",
+    "label": "no_rag"
+  },
+  {
+    "question": "RAG چیست؟",
+    "label": "no_rag"
+  },
+  {
+    "question": "What is RAG?",
+    "label": "no_rag"
+  },
+  {
+    "question": "چطور یک مدل Machine Learning بسازم؟",
+    "label": "no_rag"
+  },
+  {
+    "question": "How do I train a machine learning model?",
+    "label": "no_rag"
+  },
+  {
+    "question": "سلام",
+    "label": "no_rag"
+  },
+  {
+    "question": "Hello",
+    "label": "no_rag"
+  },
+  {
+    "question": "حالت چطوره؟",
+    "label": "no_rag"
+  },
+  {
+    "question": "How are you?",
+    "label": "no_rag"
+  },
+  {
+    "question": "چه خبر؟",
+    "label": "no_rag"
+  },
+  {
+    "question": "What's up?",
+    "label": "no_rag"
+  },
+  {
+    "question": "امروز هوا چطور است؟",
+    "label": "no_rag"
+  },
+  {
+    "question": "What is the weather today?",
+    "label": "no_rag"
+  },
+  {
+    "question": "یک جوک بگو",
+    "label": "no_rag"
+  },
+  {
+    "question": "Tell me a joke",
+    "label": "no_rag"
+  }
+]

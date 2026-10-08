@@ -1,5 +1,10 @@
 import AIChat from "../components/ai-assistant/AIChat";
+import DashboardLayout from "../components/layout/DashboardLayout";
 
 export default function AIAssistantPage() {
-  return <AIChat />;
+  return (
+    <DashboardLayout>
+      <AIChat />
+    </DashboardLayout>
+  );
 }

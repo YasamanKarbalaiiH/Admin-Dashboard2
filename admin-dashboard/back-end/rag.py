@@ -1,12 +1,12 @@
 import json
 import os
-
 import chromadb
 import requests
-
 from dotenv import load_dotenv
 from sentence_transformers import SentenceTransformer
+import joblib
 
+# Load environment variables
 load_dotenv()
 
 api_key = os.getenv("KIE_API_KEY")
@@ -18,9 +18,11 @@ if not api_key:
 if not db_path:
     raise ValueError("DASHBOARD_DB_PATH was not found in .env")
 
-embedding_model = SentenceTransformer(
-    "all-MiniLM-L6-v2"
-)
+
+# Initialize embedding model and vector database
+embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
+router_model = joblib.load("router_model.pkl")
+retrieval_model = joblib.load("retrieval_model.pkl")
 
 chroma_client = chromadb.PersistentClient(
     path="./chroma_db"
@@ -31,6 +33,7 @@ collection = chroma_client.get_or_create_collection(
 )
 
 
+# Load dashboard database
 def load_database():
     with open(
         db_path,
@@ -40,6 +43,7 @@ def load_database():
         return json.load(file)
 
 
+# Convert database records into searchable chunks
 def create_chunks(database):
     chunks = []
 
@@ -130,13 +134,14 @@ Dark Mode: {settings["darkMode"]}
     return chunks
 
 
+# Sync dashboard data with ChromaDB
 def sync_database():
     database = load_database()
     chunks = create_chunks(database)
 
     existing_data = collection.get()
 
-    if len(existing_data["ids"]) > 0:
+    if existing_data["ids"]:
         collection.delete(
             ids=existing_data["ids"]
         )
@@ -158,44 +163,8 @@ def sync_database():
 sync_database()
 
 
-def ask_rag(question: str):
-    question_embedding = embedding_model.encode(
-        question
-    ).tolist()
-
-    results = collection.query(
-        query_embeddings=[
-            question_embedding
-        ],
-        n_results=3
-    )
-
-    relevant_chunks = results["documents"][0]
-
-    context = "\n\n".join(
-        relevant_chunks
-    )
-
-    prompt = f"""
-You are an AI assistant for the Toko Admin Dashboard.
-
-Answer the user's question using only the information provided in the context.
-
-If the answer is not available in the context, say:
-
-"I don't have enough information to answer that question based on the available data."
-
-Do not use outside knowledge.
-
-Context:
-
-{context}
-
-Question:
-
-{question}
-"""
-
+# Send prompt to the LLM
+def call_llm(prompt: str) -> str:
     url = "https://api.kie.ai/openai/v1/responses"
 
     headers = {
@@ -238,4 +207,122 @@ Question:
         if event.get("type") == "response.output_text.delta":
             answer += event.get("delta", "")
 
-    return answer
+    return answer.strip()
+
+
+
+
+
+
+# Decide whether retrieval is required
+def route_question(question: str) -> str:
+    question_embedding = embedding_model.encode([question])
+    decision = router_model.predict(question_embedding)[0]
+
+    return decision
+
+
+# Retrieve relevant dashboard data
+def retrieve(question: str) -> str:
+    question_embedding = embedding_model.encode(
+        question
+    ).tolist()
+
+    results = collection.query(
+        query_embeddings=[
+            question_embedding
+        ],
+        n_results=5
+    )
+
+    chunks = results["documents"][0]
+
+    return "\n\n".join(chunks)
+
+
+# Generate a natural answer without retrieval
+def answer_without_rag(question: str) -> str:
+    print("no-rag")
+    prompt = f"""
+Answer the user's question naturally.
+
+Question:
+{question}
+"""
+
+    return call_llm(prompt)
+
+
+# Generate an answer from retrieved context
+def generate_answer(question: str, context: str) -> str:
+    prompt = f"""
+Answer the question using only the provided context.
+
+If the answer is unavailable, say:
+"I don't have enough information to answer that question based on the available data."
+
+Context:
+{context}
+
+Question:
+{question}
+"""
+
+    return call_llm(prompt)
+
+
+# Check whether retrieved context is relevant
+def grade_retrieval(question: str, context: str) -> str:
+    text = question + " " + context
+
+    embedding = embedding_model.encode([text])
+
+    decision = retrieval_model.predict(embedding)[0]
+
+    return decision
+
+
+# Rewrite the query for better retrieval
+def rewrite_query(question: str) -> str:
+    print("rewrite")
+    prompt = f"""
+Rewrite the question into a concise search query for dashboard data.
+
+Preserve names, products, customers, invoice numbers, dates,
+and other important entities.
+
+Return only the rewritten query.
+
+Question:
+{question}
+"""
+
+    return call_llm(prompt).strip()
+
+
+# Run the Adaptive RAG pipeline
+def ask_rag(question: str):
+    decision = route_question(question)
+
+    if decision == "no_rag":
+        return answer_without_rag(question)
+
+    context = retrieve(question)
+    print("rag")
+
+    retrieval_grade = grade_retrieval(
+        question,
+        context
+    )
+
+    if retrieval_grade == "not_relevant":
+        rewritten_query = rewrite_query(question)
+
+        context = retrieve(
+            rewritten_query
+        )
+
+    return generate_answer(
+        question,
+        context
+    )
