@@ -7,7 +7,7 @@ from sklearn.metrics import classification_report
 from sklearn.model_selection import train_test_split
 
 
-with open("router_dataset.json", "r", encoding="utf-8") as file:
+with open("../datasets/router_dataset.json", "r", encoding="utf-8") as file:
     data = json.load(file)
 
 
@@ -39,6 +39,6 @@ predictions = classifier.predict(X_test)
 print(classification_report(y_test, predictions))
 
 
-joblib.dump(classifier, "router_model.pkl")
+joblib.dump(classifier, "../model/router_model.pkl")
 
 print("Router model saved.")
