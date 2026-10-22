@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 from rag import ask_rag
+from rag_llm import ask_rag as ask_rag_llm
 
 app = FastAPI()
 
@@ -31,7 +32,7 @@ def home():
 @app.post("/ask")
 def ask_question(data: Question):
 
-    answer = ask_rag(
+    answer = ask_rag_llm(
         data.question
     )
 

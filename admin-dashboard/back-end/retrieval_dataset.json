@@ -1422,7 +1422,7 @@
   {
     "question": "What was January revenue?",
     "context": "Monthly Revenue: Month: January, Revenue: 45000",
-    "label": "not_relevant"
+    "label": "relevant"
   },
   {
     "question": "What is the admin email?",
@@ -1442,17 +1442,17 @@
   {
     "question": "Is dark mode enabled?",
     "context": "Settings: Dark Mode: true",
-    "label": "not_relevant"
+    "label": "relevant"
   },
   {
     "question": "Are email notifications enabled?",
     "context": "Settings: Email Notifications: true",
-    "label": "not_relevant"
+    "label": "relevant"
   },
   {
     "question": "آیا حالت تاریک فعال است؟",
     "context": "Settings: Dark Mode: true",
-    "label": "not_relevant"
+    "label": "relevant"
   },
   {
     "question": "چند مشتری داریم؟",
@@ -1471,32 +1471,37 @@
   },
   {
     "question": "مجموع درآمد چقدر است؟",
-    "context": "Dashboard Statistics: Total Revenue: 245000",
-    "label": "not_relevant"
+    "context": "Dashboard Statistics: Total Revenue: 48,250",
+    "label": "relevant"
   },
   {
     "question": "ایمیل ادمین چیست؟",
     "context": "Profile: Email: admin@example.com",
-    "label": "not_relevant"
+    "label": "relevant"
   },
   {
     "question": "قیمت iPhone 16 Pro چقدر است؟",
     "context": "Product: Name: iPhone 16 Pro, Price: 999",
-    "label": "not_relevant"
+    "label": "relevant"
   },
   {
     "question": "وضعیت INV-1002 چیست؟",
     "context": "Invoice: Invoice Number: INV-1002, Status: Pending",
-    "label": "not_relevant"
+    "label": "relevant"
   },
   {
     "question": "درآمد January چقدر بوده؟",
     "context": "Monthly Revenue: Month: January, Revenue: 45000",
-    "label": "not_relevant"
+    "label": "relevant"
   },
   {
     "question": "موجودی MacBook Air چقدر است؟",
     "context": "Product: Name: MacBook Air, Stock: 8",
     "label": "relevant"
+  },
+  {
+    "question": "مجموع درآمد چقدر است؟",
+    "context": "Product: Name: MacBook Air, Stock: 8",
+    "label": "not_relevant"
   }
 ]

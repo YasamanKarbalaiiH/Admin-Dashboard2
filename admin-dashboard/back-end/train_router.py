@@ -7,21 +7,17 @@ from sklearn.metrics import classification_report
 from sklearn.model_selection import train_test_split
 
 
-with open("../datasets/retrieval_dataset.json", "r", encoding="utf-8") as file:
+with open("router_dataset.json", "r", encoding="utf-8") as file:
     data = json.load(file)
 
 
-texts = [
-    f"Question: {item['question']}\nContext: {item['context']}"
-    for item in data
-]
-
+questions = [item["question"] for item in data]
 labels = [item["label"] for item in data]
 
 
 embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
 
-embeddings = embedding_model.encode(texts)
+embeddings = embedding_model.encode(questions)
 
 
 X_train, X_test, y_train, y_test = train_test_split(
@@ -43,6 +39,6 @@ predictions = classifier.predict(X_test)
 print(classification_report(y_test, predictions))
 
 
-joblib.dump(classifier, "../model/retrieval_model.pkl")
+joblib.dump(classifier, "router_model.pkl")
 
-print("Retrieval model saved.")
+print("Router model saved.")

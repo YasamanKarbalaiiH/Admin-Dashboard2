@@ -1,19 +1,19 @@
 import json
 import os
 import chromadb
-import requests
 from dotenv import load_dotenv
 from sentence_transformers import SentenceTransformer
 import joblib
+from openai import OpenAI
 
 # Load environment variables
 load_dotenv()
 
-api_key = os.getenv("KIE_API_KEY")
+api_key = os.getenv("GAPGPT_API_KEY")
 db_path = os.getenv("DASHBOARD_DB_PATH")
 
 if not api_key:
-    raise ValueError("KIE_API_KEY was not found in .env")
+    raise ValueError("GAPGPT_API_KEY was not found in .env")
 
 if not db_path:
     raise ValueError("DASHBOARD_DB_PATH was not found in .env")
@@ -165,48 +165,30 @@ sync_database()
 
 # Send prompt to the LLM
 def call_llm(prompt: str) -> str:
-    url = "https://api.kie.ai/openai/v1/responses"
-
-    headers = {
-        "Authorization": f"Bearer {api_key}",
-        "Content-Type": "application/json"
-    }
-
-    data = {
-        "model": "gpt-6-astra",
-        "input": prompt,
-        "stream": True
-    }
-
-    response = requests.post(
-        url,
-        headers=headers,
-        json=data,
-        timeout=60,
-        verify=False
-    )
-
-    response.raise_for_status()
-
-    answer = ""
-
-    for line in response.text.splitlines():
-        if not line.startswith("data:"):
-            continue
-
-        data_text = line[5:].strip()
-
-        if not data_text or data_text == "[DONE]":
-            continue
-
-        try:
-            event = json.loads(data_text)
-        except json.JSONDecodeError:
-            continue
-
-        if event.get("type") == "response.output_text.delta":
-            answer += event.get("delta", "")
-
+    client = OpenAI(
+           base_url="https://api.gapgpt.app/v1",
+           api_key=api_key
+       )
+   
+    response = client.chat.completions.create(
+           model="gpt-4o",
+           messages=[
+               {
+                   "role": "user",
+                   "content": prompt
+               }
+           ],
+           temperature=0,
+           max_tokens=500
+       )
+   
+    answer = response.choices[0].message.content
+   
+    if not answer or not answer.strip():
+           raise RuntimeError(
+               f"GAPGPT returned an empty response: {response.model_dump()}"
+           )
+   
     return answer.strip()
 
 
@@ -225,14 +207,12 @@ def route_question(question: str) -> str:
 # Retrieve relevant dashboard data
 def retrieve(question: str) -> str:
     question_embedding = embedding_model.encode(
-        question
+        [question]
     ).tolist()
 
     results = collection.query(
-        query_embeddings=[
-            question_embedding
-        ],
-        n_results=5
+        query_embeddings=question_embedding,
+        n_results=10
     )
 
     chunks = results["documents"][0]
@@ -274,10 +254,11 @@ Question:
 # Check whether retrieved context is relevant
 def grade_retrieval(question: str, context: str) -> str:
     text = question + " " + context
-
+    
     embedding = embedding_model.encode([text])
 
     decision = retrieval_model.predict(embedding)[0]
+
 
     return decision
 
