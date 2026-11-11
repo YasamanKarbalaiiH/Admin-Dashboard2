@@ -1,0 +1,198 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "name": "John Smith",
+      "email": "john@example.com",
+      "phone": "+1 555 123 4567",
+      "company": "Acme Inc.",
+      "status": "Active",
+      "createdAt": "2026-09-20"
+    },
+    {
+      "id": 2,
+      "name": "Sarah Johnson",
+      "email": "sarah@example.com",
+      "phone": "+1 555 987 6543",
+      "company": "Nova Studio",
+      "status": "Active",
+      "createdAt": "2026-09-18"
+    },
+    {
+      "id": 3,
+      "name": "Michael Brown",
+      "email": "michael@example.com",
+      "phone": "+1 555 456 7890",
+      "company": "Tech Corp",
+      "status": "Inactive",
+      "createdAt": "2026-09-15"
+    },
+    {
+      "id": 4,
+      "name": "Emily Davis",
+      "email": "emily@example.com",
+      "phone": "+1 555 222 3344",
+      "company": "Pixel House",
+      "status": "Active",
+      "createdAt": "2026-09-12"
+    },
+    {
+      "id": 5,
+      "name": "David Wilson",
+      "email": "david@example.com",
+      "phone": "+1 555 333 4455",
+      "company": "Digital Lab",
+      "status": "Active",
+      "createdAt": "2026-09-10"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "MacBook Pro",
+      "category": "Laptop",
+      "price": 1999,
+      "stock": 24,
+      "status": "In Stock"
+    },
+    {
+      "id": 2,
+      "name": "iPhone 16 Pro",
+      "category": "Smartphone",
+      "price": 1199,
+      "stock": 18,
+      "status": "In Stock"
+    },
+    {
+      "id": 3,
+      "name": "AirPods Pro",
+      "category": "Accessories",
+      "price": 249,
+      "stock": 8,
+      "status": "Low Stock"
+    },
+    {
+      "id": 4,
+      "name": "Magic Keyboard",
+      "category": "Accessories",
+      "price": 99,
+      "stock": 0,
+      "status": "Out of Stock"
+    },
+    {
+      "id": 5,
+      "name": "iPad Pro",
+      "category": "Tablet",
+      "price": 1099,
+      "stock": 15,
+      "status": "In Stock"
+    }
+  ],
+  "invoices": [
+    {
+      "id": 1,
+      "invoiceNumber": "INV-1024",
+      "customer": "John Smith",
+      "date": "2026-09-25",
+      "dueDate": "2026-10-25",
+      "amount": 2346,
+      "status": "Paid"
+    },
+    {
+      "id": 2,
+      "invoiceNumber": "INV-1023",
+      "customer": "Sarah Johnson",
+      "date": "2026-09-24",
+      "dueDate": "2026-10-24",
+      "amount": 1250,
+      "status": "Pending"
+    },
+    {
+      "id": 3,
+      "invoiceNumber": "INV-1022",
+      "customer": "Michael Brown",
+      "date": "2026-09-22",
+      "dueDate": "2026-10-22",
+      "amount": 850,
+      "status": "Paid"
+    },
+    {
+      "id": 4,
+      "invoiceNumber": "INV-1021",
+      "customer": "Emily Davis",
+      "date": "2026-09-20",
+      "dueDate": "2026-10-20",
+      "amount": 2100,
+      "status": "Overdue"
+    },
+    {
+      "id": 5,
+      "invoiceNumber": "INV-1020",
+      "customer": "David Wilson",
+      "date": "2026-09-18",
+      "dueDate": "2026-10-18",
+      "amount": 1750,
+      "status": "Paid"
+    }
+  ],
+  "dashboard": {
+    "statistics": {
+      "customers": 1248,
+      "products": 356,
+      "invoices": 842,
+      "revenue": 48250
+    },
+    "revenue": [
+      {
+        "month": "Jan",
+        "value": 18500
+      },
+      {
+        "month": "Feb",
+        "value": 22000
+      },
+      {
+        "month": "Mar",
+        "value": 19800
+      },
+      {
+        "month": "Apr",
+        "value": 27500
+      },
+      {
+        "month": "May",
+        "value": 31000
+      },
+      {
+        "month": "Jun",
+        "value": 28500
+      },
+      {
+        "month": "Jul",
+        "value": 35000
+      },
+      {
+        "month": "Aug",
+        "value": 42000
+      },
+      {
+        "month": "Sep",
+        "value": 48250
+      }
+    ]
+  },
+  "profile": {
+    "id": 1,
+    "name": "Yasaman Karbalaii",
+    "role": "Administrator",
+    "email": "yasaman@example.com",
+    "phone": "+98 900 000 0000",
+    "location": "Rafsanjan, Iran",
+    "joined": "2026-01-20"
+  },
+  "settings": {
+    "emailNotifications": true,
+    "pushNotifications": true,
+    "darkMode": false
+  }
+}
